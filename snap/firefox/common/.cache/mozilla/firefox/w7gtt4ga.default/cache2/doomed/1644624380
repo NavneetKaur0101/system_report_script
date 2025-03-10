@@ -1,0 +1,1538 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; object-src 'none'; script-src resource: chrome:; connect-src https:; img-src https: data: blob: chrome:; style-src 'unsafe-inline';">
+    <meta name="color-scheme" content="light dark">
+    <title data-l10n-id="newtab-page-title"></title>
+    <link rel="icon" type="image/png" href="chrome://branding/content/icon32.png"/>
+    <link rel="localization" href="branding/brand.ftl" />
+    <link rel="localization" href="toolkit/branding/brandings.ftl" />
+    <link rel="localization" href="browser/newtab/newtab.ftl" />
+    <link rel="stylesheet" href="chrome://global/skin/design-system/tokens-brand.css">
+    <link rel="stylesheet" href="chrome://browser/content/contentSearchUI.css" />
+    <link rel="stylesheet" href="chrome://activity-stream/content/css/activity-stream.css" />
+  </head>
+  <!-- Cached: Tue, 11 Feb 2025 20:31:27 GMT -->
+  <body class="activity-stream">
+    <div id="header-asrouter-container" role="presentation"></div>
+    <div id="root">
+      <div class="has-search"><menu class="personalizeButtonWrapper"><span><button class="icon icon-settings personalize-button" data-l10n-id="newtab-personalize-icon-label"></button><div class="customize-menu" role="dialog" data-l10n-id="newtab-personalize-dialog-label"><div class="close-button-wrapper"><button class="close-button" data-l10n-id="newtab-custom-close-button"></button></div><div class="home-section"><div id="shortcuts-section" class="section"><moz-toggle id="shortcuts-toggle" pressed="true" onToggle="function() {
+    [native code]
+}" data-preference="feeds.topsites" data-eventSource="TOP_SITES" data-l10n-id="newtab-custom-shortcuts-toggle" data-l10n-attrs="label, description"></moz-toggle><div><div class="more-info-top-wrapper"><div class="more-information"><select id="row-selector" class="selector" name="row-count" data-preference="topSitesRows" aria-labelledby="custom-shortcuts-title"><option selected="" value="1" data-l10n-id="newtab-custom-row-selector" data-l10n-args="{&quot;num&quot;: 1}"></option><option value="2" data-l10n-id="newtab-custom-row-selector" data-l10n-args="{&quot;num&quot;: 2}"></option><option value="3" data-l10n-id="newtab-custom-row-selector" data-l10n-args="{&quot;num&quot;: 3}"></option><option value="4" data-l10n-id="newtab-custom-row-selector" data-l10n-args="{&quot;num&quot;: 4}"></option></select><div class="check-wrapper" role="presentation"><input type="checkbox" id="sponsored-shortcuts" class="sponsored-checkbox" checked="" data-preference="showSponsoredTopSites" data-eventSource="SPONSORED_TOP_SITES"/><label class="sponsored" for="sponsored-shortcuts" data-l10n-id="newtab-custom-sponsored-sites"></label></div></div></div></div></div><div id="pocket-section" class="section"><label class="switch"><moz-toggle id="pocket-toggle" pressed="true" onToggle="function() {
+    [native code]
+}" aria-describedby="custom-pocket-subtitle" data-preference="feeds.section.topstories" data-eventSource="TOP_STORIES" data-l10n-id="newtab-custom-stories-toggle" data-l10n-attrs="label, description"></moz-toggle></label><div><div class="more-info-pocket-wrapper"><div class="more-information"><div class="check-wrapper" role="presentation"><input type="checkbox" id="sponsored-pocket" class="sponsored-checkbox" checked="" data-preference="showSponsored" data-eventSource="POCKET_SPOCS"/><label class="sponsored" for="sponsored-pocket" data-l10n-id="newtab-custom-pocket-sponsored"></label></div></div></div></div></div><div id="recent-section" class="section"><label class="switch"><moz-toggle id="highlights-toggle" onToggle="function() {
+    [native code]
+}" data-preference="feeds.section.highlights" data-eventSource="HIGHLIGHTS" data-l10n-id="newtab-custom-recent-toggle" data-l10n-attrs="label, description"></moz-toggle></label></div><span class="divider" role="separator"></span><div><button id="settings-link" class="external-link" data-l10n-id="newtab-custom-settings"></button></div></div></div></span></menu><div class="weatherWrapper"></div><div class="outer-wrapper ds-outer-wrapper-search-alignment ds-outer-wrapper-breakpoint-override visible-logo"><main><div class="non-collapsible-section"><div class="search-wrapper"><div class="logo-and-wordmark"><div class="logo"></div><div class="wordmark"></div></div><div class="search-inner-wrapper"><button class="search-handoff-button" tabindex="-1"><div class="fake-textbox"></div><input type="search" class="fake-editable" tabindex="-1" aria-hidden="true"/><div class="fake-caret"></div></button></div></div></div><div class="body-wrapper on"><div class="discovery-stream ds-layout"><div class="ds-column ds-column-12"><div class="ds-column-grid"><div><div class="ds-top-sites"><section class="collapsible-section top-sites" data-section-id="topsites"><div class="section-top-bar"><h3 class="section-title-container " style="visibility:hidden"><span class="section-title"><span data-l10n-id="newtab-section-header-topsites"></span></span><span class="learn-more-link-wrapper"></span></h3></div><div><ul class="top-sites-list"><li class="top-site-outer placeholder  "><div class="top-site-inner"><a class="top-site-button" tabindex="0" draggable="true" data-is-sponsored-link="false"><div class="tile" aria-hidden="true"><div class="icon-wrapper"><div class=""></div></div></div><div class="title"><span dir="auto"><br/></span><span class="sponsored-label" data-l10n-id="newtab-topsite-sponsored"></span></div></a><div class="topsite-impression-observer"></div></div></li><li class="top-site-outer placeholder  "><div class="top-site-inner"><a class="top-site-button" tabindex="0" draggable="true" data-is-sponsored-link="false"><div class="tile" aria-hidden="true"><div class="icon-wrapper"><div class=""></div></div></div><div class="title"><span dir="auto"><br/></span><span class="sponsored-label" data-l10n-id="newtab-topsite-sponsored"></span></div></a><div class="topsite-impression-observer"></div></div></li><li class="top-site-outer placeholder  "><div class="top-site-inner"><a class="top-site-button" tabindex="0" draggable="true" data-is-sponsored-link="false"><div class="tile" aria-hidden="true"><div class="icon-wrapper"><div class=""></div></div></div><div class="title"><span dir="auto"><br/></span><span class="sponsored-label" data-l10n-id="newtab-topsite-sponsored"></span></div></a><div class="topsite-impression-observer"></div></div></li><li class="top-site-outer"><div class="top-site-inner"><a class="top-site-button" href="https://gc.blackboard.com/ultra/courses/_391986_1/outline" tabindex="0" draggable="true" data-is-sponsored-link="false"><div class="tile" aria-hidden="true"><div class="icon-wrapper" data-fallback="g"><div></div><div class="top-site-icon default-icon" data-fallback="" style="background-image:url(data:image/png;base64,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)"></div></div></div><div class="title"><span dir="auto">gc.blackboard</span><span class="sponsored-label" data-l10n-id="newtab-topsite-sponsored"></span></div></a><div><button aria-haspopup="true" data-l10n-id="newtab-menu-content-tooltip" data-l10n-args="{&quot;title&quot;:&quot;gc.blackboard&quot;}" class="context-menu-button icon"></button></div><div class="topsite-impression-observer"></div></div></li><li class="top-site-outer"><div class="top-site-inner"><a class="top-site-button" href="https://accounts.firefox.com/settings?context=fx_desktop_v3&amp;entrypoint=fxa_avatar_menu&amp;uid=3948443a042147d48d8cd68b9a6da32c&amp;email=i.navneetkaur032%40gmail.com" tabindex="0" draggable="true" data-is-sponsored-link="false"><div class="tile" aria-hidden="true"><div class="icon-wrapper" data-fallback="a"><div></div><div class="top-site-icon default-icon" data-fallback="" style="background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAEHUlEQVRoQ+1YSSi1YRR+riEUMmTcKJShlNgohIViQWQqhEjZsTCWkoVkiA0LZVgow0KRjaIMKyQbhUyRjCUi8/T/z1v377r3vZPb7ff/fadu93bfc97vPOc55z3n/VQAPn9//llRKQD+MncKA3+ZACgMKAxYGAElhSwMoMXmCgMWh9DCDf4/BlQqFYKDg+Hp6YnPT/mc9/T0hK2tLby8vMDe3h5hYWGIiYlBYGAgHBwccHV1hY2NDayuruLs7EwaY19fX2ETEREBDw8PPD4+4uDgACsrK9je3sbr66tJ3OgwYGtri6GhIWRnZ0s34fre3h5SUlKE83V1dULX29sbBK8WOkCQvb29GB4eFg5SCDA/Px+VlZUIDw8Xe6iFAbu8vMTk5CQ6Ojqwv79vFIQUwNjYmHBKn+zu7qK8vBxNTU1ISkoy+JDn52d0dXWhubkZHx8faGhoQH19PZycnAzaLS8vo6ysDJubmwb1vgXg9PRURCc+Pt5ohKjw8PCA0tJSvL+/C3adnZ1NspuYmEBxcTHu7+/16ksBjI6OIicnR9SAZlpoUs3fXLu9vcX5+bn47ePjA1dXV+nD1tfXYWNjg8jISJGarA065ubmJuy4pi0EnpWVhZmZGdMB0JG4uDgEBATAxcUFjY2N8Pf319mA6cBc7e7u/pOroaGhIq0SEhJ09NXBYKG2tLRgfn5eAHB3dxdRrqqqkqZVZ2cnampqTAegqcnILCwsgI5py+LiIvLy8nBxcfFlKTo6GtPT0/Dz89Oxubu7Q1FRkQCuKY6Ojujv70dBQYGOzdTUlKjHt7c3KQiDfUAfAEaTRTwwMKCzKU+V8fFxZGZm6qzNzs4iIyND1IS2MGVHRkZgZ2f3ZWlubg5paWng0S2TbwG4ublBcnIy1tbWpJu2traKk0ZbeDTW1tZKbaKiokBnmVKaYhUALMDExETs7OxInaHzBKEt/L+trU1qExISAqYlWbc6AB6jBMB+IJPq6mrRiLSFTa+9vV0BoBmBb9WAwoAkiZQakFWWvj7w41PIy8tLtHV+sykFBQV9wcfuyy7MsYAzDLsk/1N3S32nEI9WjtccyTk2azYnfSm0tLSEwsJCcKrlSM5ubrCI6VBPTw/S09PFMEcWNGd2GnOq5ABHh6l/fHyM3NxcnJyciL31Abi+vhbDHx0pKSkRlxe16APAeYn78zns1BzLDQJgdIzdB7TT7ejoSAxw/DYEQG3HUSI1NRWMrjEAms/q6+tDRUWFAkCn3n8UA7wPMJ952ebMb0yoz9weHBwEhzxKbGysSBGZPfX5MoD35MPDwz/b807NezIvRLKXCUxtphwPFZM7sTHnf8L6//de6CdE1RwfFAbMiZY1dBUGrBFVc/ZUGDAnWtbQVRiwRlTN2VNhwJxoWUP3F7uurx9n2EXqAAAAAElFTkSuQmCC)"></div></div></div><div class="title"><span dir="auto">accounts.firefox</span><span class="sponsored-label" data-l10n-id="newtab-topsite-sponsored"></span></div></a><div><button aria-haspopup="true" data-l10n-id="newtab-menu-content-tooltip" data-l10n-args="{&quot;title&quot;:&quot;accounts.firefox&quot;}" class="context-menu-button icon"></button></div><div class="topsite-impression-observer"></div></div></li><li class="top-site-outer"><div class="top-site-inner"><a class="top-site-button" href="https://georgiancollege.sharepoint.com/SitePages/blackboard.aspx" tabindex="0" draggable="true" data-is-sponsored-link="false"><div class="tile" aria-hidden="true"><div class="icon-wrapper letter-fallback" data-fallback="g" style="background-color:#A172FF"><div class=""></div></div></div><div class="title"><span dir="auto">georgiancollege.sharepoint</span><span class="sponsored-label" data-l10n-id="newtab-topsite-sponsored"></span></div></a><div><button aria-haspopup="true" data-l10n-id="newtab-menu-content-tooltip" data-l10n-args="{&quot;title&quot;:&quot;georgiancollege.sharepoint&quot;}" class="context-menu-button icon"></button></div><div class="topsite-impression-observer"></div></div></li><li class="top-site-outer hide-for-narrow"><div class="top-site-inner"><a class="top-site-button" href="https://www.youtube.com/" tabindex="0" draggable="true" data-is-sponsored-link="false"><div class="tile" aria-hidden="true"><div class="icon-wrapper" data-fallback="Y"><div class="top-site-icon rich-icon" style="background-image:url(chrome://activity-stream/content/data/content/tippytop/images/youtube-com@2x.png)"></div></div></div><div class="title"><span dir="auto">YouTube</span><span class="sponsored-label" data-l10n-id="newtab-topsite-sponsored"></span></div></a><div><button aria-haspopup="true" data-l10n-id="newtab-menu-content-tooltip" data-l10n-args="{&quot;title&quot;:&quot;YouTube&quot;}" class="context-menu-button icon"></button></div><div class="topsite-impression-observer"></div></div></li><li class="top-site-outer hide-for-narrow"><div class="top-site-inner"><a class="top-site-button" href="https://www.facebook.com/" tabindex="0" draggable="true" data-is-sponsored-link="false"><div class="tile" aria-hidden="true"><div class="icon-wrapper" data-fallback="F"><div class="top-site-icon rich-icon" style="background-image:url(chrome://activity-stream/content/data/content/tippytop/images/facebook-com@2x.png)"></div></div></div><div class="title"><span dir="auto">Facebook</span><span class="sponsored-label" data-l10n-id="newtab-topsite-sponsored"></span></div></a><div><button aria-haspopup="true" data-l10n-id="newtab-menu-content-tooltip" data-l10n-args="{&quot;title&quot;:&quot;Facebook&quot;}" class="context-menu-button icon"></button></div><div class="topsite-impression-observer"></div></div></li></ul><div class="edit-topsites-wrapper"></div></div></section></div></div></div></div><style data-styles="[[null]]"></style></div><section class="collapsible-section ds-layout" data-section-id="topstories"><div class="section-top-bar"><h3 class="section-title-container "><span class="section-title"><span data-l10n-id="newtab-section-header-stories"></span></span><span class="learn-more-link-wrapper"><span class="learn-more-link"><a href="https://getpocket.com/firefox/new_tab_learn_more" data-l10n-id="newtab-pocket-learn-more"></a></span></span></h3></div><div><div class="discovery-stream ds-layout"><div class="ds-column ds-column-12"><div class="ds-column-grid"><div><div><div class="ds-card-grid    ds-card-grid-include-descriptions "><article class="ds-card   ds-card-title-lines-3 ds-card-desc-lines-3  "><div class="img-wrapper"><picture class="ds-image
+       img
+      
+      
+    "><img loading="lazy" crossorigin="anonymous" sizes="(min-width: 1122px) 296px,(min-width: 866px) 218px,(max-width: 610px) 202px,202px" src="https://s3.us-east-1.amazonaws.com/pocket-curatedcorpusapi-prod-images/c3902a6a-8a14-4c7f-8de0-72506ae9365e.jpeg" srcSet="https://img-getpocket.cdn.mozilla.net/296x148/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2Fc3902a6a-8a14-4c7f-8de0-72506ae9365e.jpeg 296w,https://img-getpocket.cdn.mozilla.net/592x296/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2Fc3902a6a-8a14-4c7f-8de0-72506ae9365e.jpeg 592w,https://img-getpocket.cdn.mozilla.net/218x109/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2Fc3902a6a-8a14-4c7f-8de0-72506ae9365e.jpeg 218w,https://img-getpocket.cdn.mozilla.net/436x218/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2Fc3902a6a-8a14-4c7f-8de0-72506ae9365e.jpeg 436w,https://img-getpocket.cdn.mozilla.net/202x101/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2Fc3902a6a-8a14-4c7f-8de0-72506ae9365e.jpeg 202w,https://img-getpocket.cdn.mozilla.net/404x202/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2Fc3902a6a-8a14-4c7f-8de0-72506ae9365e.jpeg 404w"/></picture></div><a href="https://www.si.com/nfl/eagles-super-bowl-champions-21-moments-digital-cover?utm_source=firefox-newtab-en-us" title="The 21 Moments That Helped the Eagles Win Their Second Super Bowl" class="ds-card-link"><div class="impression-observer"></div></a><div class="meta"><div class="info-wrap"><p class="source clamp">Sports Illustrated</p><header class="title clamp">The 21 Moments That Helped the Eagles Win Their Second Super Bowl</header><p class="excerpt clamp">A championship lost and a year-after collapse. A bye week declaration. A torn knee and a Black Panther. A book, an OC and so much more. Inside a two-year journey of healing before Philadelphia could win it all.</p></div></div><div class="card-stp-button-hover-background"><div class="card-stp-button-position-wrapper"><button class="card-stp-button"><span class="story-badge-icon icon icon-pocket-save"></span><span data-l10n-id="newtab-pocket-save"></span></button><div class="context-menu-position-container"><button aria-haspopup="true" data-l10n-id="newtab-menu-content-tooltip" data-l10n-args="{&quot;title&quot;:&quot;The 21 Moments That Helped the Eagles Win Their Second Super Bowl&quot;}" class="context-menu-button icon"></button></div></div></div></article><article class="ds-card   ds-card-title-lines-3 ds-card-desc-lines-3  "><div class="img-wrapper"><picture class="ds-image
+       img
+      
+      
+    "><img loading="lazy" crossorigin="anonymous" sizes="(min-width: 1122px) 296px,(min-width: 866px) 218px,(max-width: 610px) 202px,202px" src="https://s.zkcdn.net/Advertisers/9c6420657e254f8a81915086520c2b7f.jpg" srcSet="https://img-getpocket.cdn.mozilla.net/296x148/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs.zkcdn.net%2FAdvertisers%2F9c6420657e254f8a81915086520c2b7f.jpg 296w,https://img-getpocket.cdn.mozilla.net/592x296/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs.zkcdn.net%2FAdvertisers%2F9c6420657e254f8a81915086520c2b7f.jpg 592w,https://img-getpocket.cdn.mozilla.net/218x109/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs.zkcdn.net%2FAdvertisers%2F9c6420657e254f8a81915086520c2b7f.jpg 218w,https://img-getpocket.cdn.mozilla.net/436x218/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs.zkcdn.net%2FAdvertisers%2F9c6420657e254f8a81915086520c2b7f.jpg 436w,https://img-getpocket.cdn.mozilla.net/202x101/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs.zkcdn.net%2FAdvertisers%2F9c6420657e254f8a81915086520c2b7f.jpg 202w,https://img-getpocket.cdn.mozilla.net/404x202/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs.zkcdn.net%2FAdvertisers%2F9c6420657e254f8a81915086520c2b7f.jpg 404w"/></picture></div><a href="https://partners.thepennyhoarder.com/spending-too-much-ca-ff-prt/?aff_id=390&amp;utm_source=firefox&amp;utm_medium=paidnative&amp;aff_sub3=spending-too-much-ca-painting" title="The 6 Dumbest Things We Keep Spending Too Much Money On" class="ds-card-link"><div class="impression-observer"></div></a><div class="meta"><div class="info-wrap"><p class="source clamp">thepennyhoarder.com</p><header class="title clamp">The 6 Dumbest Things We Keep Spending Too Much Money On</header><p class="excerpt clamp">This only takes 90 seconds, but it could save you thousands.</p></div><div class="story-footer"><p class="story-sponsored-label  clamp"><span data-l10n-args="{&quot;sponsor&quot;:&quot;The Penny Hoarder&quot;}" data-l10n-id="newtab-label-sponsored-by"></span></p></div></div><div class="card-stp-button-hover-background"><div class="card-stp-button-position-wrapper"><div class="context-menu-position-container"><button aria-haspopup="true" data-l10n-id="newtab-menu-content-tooltip" data-l10n-args="{&quot;title&quot;:&quot;The 6 Dumbest Things We Keep Spending Too Much Money On&quot;}" class="context-menu-button icon"></button></div></div></div></article><article class="ds-card   ds-card-title-lines-3 ds-card-desc-lines-3  "><div class="img-wrapper"><picture class="ds-image
+       img
+      
+      
+    "><img loading="lazy" crossorigin="anonymous" sizes="(min-width: 1122px) 296px,(min-width: 866px) 218px,(max-width: 610px) 202px,202px" src="https://s3.us-east-1.amazonaws.com/pocket-curatedcorpusapi-prod-images/eed683f5-f223-487d-8125-6f91952303fe.jpeg" srcSet="https://img-getpocket.cdn.mozilla.net/296x148/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2Feed683f5-f223-487d-8125-6f91952303fe.jpeg 296w,https://img-getpocket.cdn.mozilla.net/592x296/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2Feed683f5-f223-487d-8125-6f91952303fe.jpeg 592w,https://img-getpocket.cdn.mozilla.net/218x109/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2Feed683f5-f223-487d-8125-6f91952303fe.jpeg 218w,https://img-getpocket.cdn.mozilla.net/436x218/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2Feed683f5-f223-487d-8125-6f91952303fe.jpeg 436w,https://img-getpocket.cdn.mozilla.net/202x101/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2Feed683f5-f223-487d-8125-6f91952303fe.jpeg 202w,https://img-getpocket.cdn.mozilla.net/404x202/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2Feed683f5-f223-487d-8125-6f91952303fe.jpeg 404w"/></picture></div><a href="https://getpocket.com/explore/item/the-20-5-3-rule-prescribes-how-much-time-you-should-spend-outside?utm_source=firefox-newtab-en-us" title="The ‘20-5-3’ Rule Prescribes How Much Time You Should Spend Outside" class="ds-card-link"><div class="impression-observer"></div></a><div class="meta"><div class="info-wrap"><p class="source clamp">Prevention</p><header class="title clamp">The ‘20-5-3’ Rule Prescribes How Much Time You Should Spend Outside</header><p class="excerpt clamp">Use this three-number formula to make yourself healthier and happier.</p></div></div><div class="card-stp-button-hover-background"><div class="card-stp-button-position-wrapper"><button class="card-stp-button"><span class="story-badge-icon icon icon-pocket-save"></span><span data-l10n-id="newtab-pocket-save"></span></button><div class="context-menu-position-container"><button aria-haspopup="true" data-l10n-id="newtab-menu-content-tooltip" data-l10n-args="{&quot;title&quot;:&quot;The ‘20-5-3’ Rule Prescribes How Much Time You Should Spend Outside&quot;}" class="context-menu-button icon"></button></div></div></div></article><article class="ds-card   ds-card-title-lines-3 ds-card-desc-lines-3  "><div class="img-wrapper"><picture class="ds-image
+       img
+      
+      
+    "><img loading="lazy" crossorigin="anonymous" sizes="(min-width: 1122px) 296px,(min-width: 866px) 218px,(max-width: 610px) 202px,202px" src="https://ddc514qh7t05d.cloudfront.net/dA/c145133aa0bd09a4a726eb8de2db3052/1200w/Jpeg" srcSet="https://img-getpocket.cdn.mozilla.net/296x148/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fddc514qh7t05d.cloudfront.net%2FdA%2Fc145133aa0bd09a4a726eb8de2db3052%2F1200w%2FJpeg 296w,https://img-getpocket.cdn.mozilla.net/592x296/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fddc514qh7t05d.cloudfront.net%2FdA%2Fc145133aa0bd09a4a726eb8de2db3052%2F1200w%2FJpeg 592w,https://img-getpocket.cdn.mozilla.net/218x109/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fddc514qh7t05d.cloudfront.net%2FdA%2Fc145133aa0bd09a4a726eb8de2db3052%2F1200w%2FJpeg 218w,https://img-getpocket.cdn.mozilla.net/436x218/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fddc514qh7t05d.cloudfront.net%2FdA%2Fc145133aa0bd09a4a726eb8de2db3052%2F1200w%2FJpeg 436w,https://img-getpocket.cdn.mozilla.net/202x101/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fddc514qh7t05d.cloudfront.net%2FdA%2Fc145133aa0bd09a4a726eb8de2db3052%2F1200w%2FJpeg 202w,https://img-getpocket.cdn.mozilla.net/404x202/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fddc514qh7t05d.cloudfront.net%2FdA%2Fc145133aa0bd09a4a726eb8de2db3052%2F1200w%2FJpeg 404w"/></picture></div><a href="https://www.context.news/climate-justice/does-climate-change-increase-violence-towards-women?utm_source=firefox-newtab-en-us" title="Does Climate Change Increase Violence Towards Women?" class="ds-card-link"><div class="impression-observer"></div></a><div class="meta"><div class="info-wrap"><p class="source clamp">Context</p><header class="title clamp">Does Climate Change Increase Violence Towards Women?</header><p class="excerpt clamp">Extreme heat, storms and food insecurity fuel violence against women as climate change ramps up risk factors</p></div></div><div class="card-stp-button-hover-background"><div class="card-stp-button-position-wrapper"><button class="card-stp-button"><span class="story-badge-icon icon icon-pocket-save"></span><span data-l10n-id="newtab-pocket-save"></span></button><div class="context-menu-position-container"><button aria-haspopup="true" data-l10n-id="newtab-menu-content-tooltip" data-l10n-args="{&quot;title&quot;:&quot;Does Climate Change Increase Violence Towards Women?&quot;}" class="context-menu-button icon"></button></div></div></div></article><article class="ds-card   ds-card-title-lines-3 ds-card-desc-lines-3  "><div class="img-wrapper"><picture class="ds-image
+       img
+      
+      
+    "><img loading="lazy" crossorigin="anonymous" sizes="(min-width: 1122px) 296px,(min-width: 866px) 218px,(max-width: 610px) 202px,202px" src="https://npr.brightspotcdn.com/dims3/default/strip/false/crop/8188x4606+0+0/resize/1400/quality/100/format/jpeg/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2F4a%2F7b%2F050d2f1d4402b5fcc5fcdce3a337%2Fpia26539-spherex-spacecraft.jpg" srcSet="https://img-getpocket.cdn.mozilla.net/296x148/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fnpr.brightspotcdn.com%2Fdims3%2Fdefault%2Fstrip%2Ffalse%2Fcrop%2F8188x4606%2B0%2B0%2Fresize%2F1400%2Fquality%2F100%2Fformat%2Fjpeg%2F%3Furl%3Dhttp%253A%252F%252Fnpr-brightspot.s3.amazonaws.com%252F4a%252F7b%252F050d2f1d4402b5fcc5fcdce3a337%252Fpia26539-spherex-spacecraft.jpg 296w,https://img-getpocket.cdn.mozilla.net/592x296/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fnpr.brightspotcdn.com%2Fdims3%2Fdefault%2Fstrip%2Ffalse%2Fcrop%2F8188x4606%2B0%2B0%2Fresize%2F1400%2Fquality%2F100%2Fformat%2Fjpeg%2F%3Furl%3Dhttp%253A%252F%252Fnpr-brightspot.s3.amazonaws.com%252F4a%252F7b%252F050d2f1d4402b5fcc5fcdce3a337%252Fpia26539-spherex-spacecraft.jpg 592w,https://img-getpocket.cdn.mozilla.net/218x109/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fnpr.brightspotcdn.com%2Fdims3%2Fdefault%2Fstrip%2Ffalse%2Fcrop%2F8188x4606%2B0%2B0%2Fresize%2F1400%2Fquality%2F100%2Fformat%2Fjpeg%2F%3Furl%3Dhttp%253A%252F%252Fnpr-brightspot.s3.amazonaws.com%252F4a%252F7b%252F050d2f1d4402b5fcc5fcdce3a337%252Fpia26539-spherex-spacecraft.jpg 218w,https://img-getpocket.cdn.mozilla.net/436x218/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fnpr.brightspotcdn.com%2Fdims3%2Fdefault%2Fstrip%2Ffalse%2Fcrop%2F8188x4606%2B0%2B0%2Fresize%2F1400%2Fquality%2F100%2Fformat%2Fjpeg%2F%3Furl%3Dhttp%253A%252F%252Fnpr-brightspot.s3.amazonaws.com%252F4a%252F7b%252F050d2f1d4402b5fcc5fcdce3a337%252Fpia26539-spherex-spacecraft.jpg 436w,https://img-getpocket.cdn.mozilla.net/202x101/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fnpr.brightspotcdn.com%2Fdims3%2Fdefault%2Fstrip%2Ffalse%2Fcrop%2F8188x4606%2B0%2B0%2Fresize%2F1400%2Fquality%2F100%2Fformat%2Fjpeg%2F%3Furl%3Dhttp%253A%252F%252Fnpr-brightspot.s3.amazonaws.com%252F4a%252F7b%252F050d2f1d4402b5fcc5fcdce3a337%252Fpia26539-spherex-spacecraft.jpg 202w,https://img-getpocket.cdn.mozilla.net/404x202/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fnpr.brightspotcdn.com%2Fdims3%2Fdefault%2Fstrip%2Ffalse%2Fcrop%2F8188x4606%2B0%2B0%2Fresize%2F1400%2Fquality%2F100%2Fformat%2Fjpeg%2F%3Furl%3Dhttp%253A%252F%252Fnpr-brightspot.s3.amazonaws.com%252F4a%252F7b%252F050d2f1d4402b5fcc5fcdce3a337%252Fpia26539-spherex-spacecraft.jpg 404w"/></picture></div><a href="https://www.npr.org/2025/02/09/nx-s1-5279568/searching-the-entire-sky-for-the-secrets-to-our-universe?utm_source=firefox-newtab-en-us" title="Searching the Entire Sky for the Secrets to Our Universe" class="ds-card-link"><div class="impression-observer"></div></a><div class="meta"><div class="info-wrap"><p class="source clamp">NPR</p><header class="title clamp">Searching the Entire Sky for the Secrets to Our Universe</header><p class="excerpt clamp">A new telescope could launch as early as late February. SPHEREx will look into deep space and also search for organic molecules.</p></div></div><div class="card-stp-button-hover-background"><div class="card-stp-button-position-wrapper"><button class="card-stp-button"><span class="story-badge-icon icon icon-pocket-save"></span><span data-l10n-id="newtab-pocket-save"></span></button><div class="context-menu-position-container"><button aria-haspopup="true" data-l10n-id="newtab-menu-content-tooltip" data-l10n-args="{&quot;title&quot;:&quot;Searching the Entire Sky for the Secrets to Our Universe&quot;}" class="context-menu-button icon"></button></div></div></div></article><article class="ds-card   ds-card-title-lines-3 ds-card-desc-lines-3  "><div class="img-wrapper"><picture class="ds-image
+       img
+      
+      
+    "><img loading="lazy" crossorigin="anonymous" sizes="(min-width: 1122px) 296px,(min-width: 866px) 218px,(max-width: 610px) 202px,202px" src="https://s.zkcdn.net/Advertisers/2e1fac4ffb2d4d6da01cf0d75b46b328.png" srcSet="https://img-getpocket.cdn.mozilla.net/296x148/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs.zkcdn.net%2FAdvertisers%2F2e1fac4ffb2d4d6da01cf0d75b46b328.png 296w,https://img-getpocket.cdn.mozilla.net/592x296/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs.zkcdn.net%2FAdvertisers%2F2e1fac4ffb2d4d6da01cf0d75b46b328.png 592w,https://img-getpocket.cdn.mozilla.net/218x109/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs.zkcdn.net%2FAdvertisers%2F2e1fac4ffb2d4d6da01cf0d75b46b328.png 218w,https://img-getpocket.cdn.mozilla.net/436x218/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs.zkcdn.net%2FAdvertisers%2F2e1fac4ffb2d4d6da01cf0d75b46b328.png 436w,https://img-getpocket.cdn.mozilla.net/202x101/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs.zkcdn.net%2FAdvertisers%2F2e1fac4ffb2d4d6da01cf0d75b46b328.png 202w,https://img-getpocket.cdn.mozilla.net/404x202/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs.zkcdn.net%2FAdvertisers%2F2e1fac4ffb2d4d6da01cf0d75b46b328.png 404w"/></picture></div><a href="https://www.g2a.com/best-deals/vod-services?adid=COM_CA_PB_DIGI_GAM_MIX_MOZILLA_VOD_1&amp;id=1611&amp;utm_source=mozilla&amp;utm_medium=price_comparison&amp;utm_campaign=COM_CA_PB_DIGI_GAM_MIX_MOZILLA_VOD_1" title="Get VOD Gift Cards Cheaper on G2A.com" class="ds-card-link"><div class="impression-observer"></div></a><div class="meta"><div class="info-wrap"><p class="source clamp">g2a.com</p><header class="title clamp">Get VOD Gift Cards Cheaper on G2A.com</header><p class="excerpt clamp">It’ll be hard to run out of stuff to watch with these. Head to G2A.com to grab gift cards cheaper.</p></div><div class="story-footer"><p class="story-sponsored-label  clamp"><span data-l10n-args="{&quot;sponsor&quot;:&quot;G2A&quot;}" data-l10n-id="newtab-label-sponsored-by"></span></p></div></div><div class="card-stp-button-hover-background"><div class="card-stp-button-position-wrapper"><div class="context-menu-position-container"><button aria-haspopup="true" data-l10n-id="newtab-menu-content-tooltip" data-l10n-args="{&quot;title&quot;:&quot;Get VOD Gift Cards Cheaper on G2A.com&quot;}" class="context-menu-button icon"></button></div></div></div></article><article class="ds-card   ds-card-title-lines-3 ds-card-desc-lines-3  "><div class="img-wrapper"><picture class="ds-image
+       img
+      
+      
+    "><img loading="lazy" crossorigin="anonymous" sizes="(min-width: 1122px) 296px,(min-width: 866px) 218px,(max-width: 610px) 202px,202px" src="https://s3.us-east-1.amazonaws.com/pocket-curatedcorpusapi-prod-images/35dfeda9-7ded-4250-8145-3894bd71bf34.jpeg" srcSet="https://img-getpocket.cdn.mozilla.net/296x148/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F35dfeda9-7ded-4250-8145-3894bd71bf34.jpeg 296w,https://img-getpocket.cdn.mozilla.net/592x296/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F35dfeda9-7ded-4250-8145-3894bd71bf34.jpeg 592w,https://img-getpocket.cdn.mozilla.net/218x109/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F35dfeda9-7ded-4250-8145-3894bd71bf34.jpeg 218w,https://img-getpocket.cdn.mozilla.net/436x218/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F35dfeda9-7ded-4250-8145-3894bd71bf34.jpeg 436w,https://img-getpocket.cdn.mozilla.net/202x101/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F35dfeda9-7ded-4250-8145-3894bd71bf34.jpeg 202w,https://img-getpocket.cdn.mozilla.net/404x202/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F35dfeda9-7ded-4250-8145-3894bd71bf34.jpeg 404w"/></picture></div><a href="https://apnews.com/article/israel-hamas-war-gaza-ceasefire-news-02-11-2025-f9dfb57e3c43001d3cc9e2ee618e8272?utm_source=firefox-newtab-en-us" title="Hamas Brushes Off Trump and Insists All Parties Must Be Committed to Ceasefire" class="ds-card-link"><div class="impression-observer"></div></a><div class="meta"><div class="info-wrap"><p class="source clamp">The Associated Press</p><header class="title clamp">Hamas Brushes Off Trump and Insists All Parties Must Be Committed to Ceasefire</header><p class="excerpt clamp">Hamas has brushed off President Donald Trump’s threat that “all hell” will break out if it does not release the remaining Israeli hostages held in the Gaza Strip by Saturday.</p></div></div><div class="card-stp-button-hover-background"><div class="card-stp-button-position-wrapper"><button class="card-stp-button"><span class="story-badge-icon icon icon-pocket-save"></span><span data-l10n-id="newtab-pocket-save"></span></button><div class="context-menu-position-container"><button aria-haspopup="true" data-l10n-id="newtab-menu-content-tooltip" data-l10n-args="{&quot;title&quot;:&quot;Hamas Brushes Off Trump and Insists All Parties Must Be Committed to Ceasefire&quot;}" class="context-menu-button icon"></button></div></div></div></article><article class="ds-card   ds-card-title-lines-3 ds-card-desc-lines-3  "><div class="img-wrapper"><picture class="ds-image
+       img
+      
+      
+    "><img loading="lazy" crossorigin="anonymous" sizes="(min-width: 1122px) 296px,(min-width: 866px) 218px,(max-width: 610px) 202px,202px" src="https://media.newyorker.com/photos/67a68bb008dd6f92144287a1/16:9/w_1280,c_limit/williams-gary-indiana-ruddy-roye-1.jpg" srcSet="https://img-getpocket.cdn.mozilla.net/296x148/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fmedia.newyorker.com%2Fphotos%2F67a68bb008dd6f92144287a1%2F16%3A9%2Fw_1280%2Cc_limit%2Fwilliams-gary-indiana-ruddy-roye-1.jpg 296w,https://img-getpocket.cdn.mozilla.net/592x296/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fmedia.newyorker.com%2Fphotos%2F67a68bb008dd6f92144287a1%2F16%3A9%2Fw_1280%2Cc_limit%2Fwilliams-gary-indiana-ruddy-roye-1.jpg 592w,https://img-getpocket.cdn.mozilla.net/218x109/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fmedia.newyorker.com%2Fphotos%2F67a68bb008dd6f92144287a1%2F16%3A9%2Fw_1280%2Cc_limit%2Fwilliams-gary-indiana-ruddy-roye-1.jpg 218w,https://img-getpocket.cdn.mozilla.net/436x218/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fmedia.newyorker.com%2Fphotos%2F67a68bb008dd6f92144287a1%2F16%3A9%2Fw_1280%2Cc_limit%2Fwilliams-gary-indiana-ruddy-roye-1.jpg 436w,https://img-getpocket.cdn.mozilla.net/202x101/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fmedia.newyorker.com%2Fphotos%2F67a68bb008dd6f92144287a1%2F16%3A9%2Fw_1280%2Cc_limit%2Fwilliams-gary-indiana-ruddy-roye-1.jpg 202w,https://img-getpocket.cdn.mozilla.net/404x202/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fmedia.newyorker.com%2Fphotos%2F67a68bb008dd6f92144287a1%2F16%3A9%2Fw_1280%2Cc_limit%2Fwilliams-gary-indiana-ruddy-roye-1.jpg 404w"/></picture></div><a href="https://www.newyorker.com/magazine/2025/02/17/gary-indiana-and-the-long-shadow-of-us-steel?utm_source=firefox-newtab-en-us" title="Gary, Indiana, and the Long Shadow of U.S. Steel" class="ds-card-link"><div class="impression-observer"></div></a><div class="meta"><div class="info-wrap"><p class="source clamp">The New Yorker</p><header class="title clamp">Gary, Indiana, and the Long Shadow of U.S. Steel</header><p class="excerpt clamp">Can a company town that’s been called “the most miserable city in America” remake itself?</p></div></div><div class="card-stp-button-hover-background"><div class="card-stp-button-position-wrapper"><button class="card-stp-button"><span class="story-badge-icon icon icon-pocket-save"></span><span data-l10n-id="newtab-pocket-save"></span></button><div class="context-menu-position-container"><button aria-haspopup="true" data-l10n-id="newtab-menu-content-tooltip" data-l10n-args="{&quot;title&quot;:&quot;Gary, Indiana, and the Long Shadow of U.S. Steel&quot;}" class="context-menu-button icon"></button></div></div></div></article><article class="ds-card   ds-card-title-lines-3 ds-card-desc-lines-3  "><div class="img-wrapper"><picture class="ds-image
+       img
+      
+      
+    "><img loading="lazy" crossorigin="anonymous" sizes="(min-width: 1122px) 296px,(min-width: 866px) 218px,(max-width: 610px) 202px,202px" src="https://i.insider.com/67a3b8f37bb3f854015bde3d?width=1200&amp;format=jpeg" srcSet="https://img-getpocket.cdn.mozilla.net/296x148/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fi.insider.com%2F67a3b8f37bb3f854015bde3d%3Fwidth%3D1200%26format%3Djpeg 296w,https://img-getpocket.cdn.mozilla.net/592x296/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fi.insider.com%2F67a3b8f37bb3f854015bde3d%3Fwidth%3D1200%26format%3Djpeg 592w,https://img-getpocket.cdn.mozilla.net/218x109/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fi.insider.com%2F67a3b8f37bb3f854015bde3d%3Fwidth%3D1200%26format%3Djpeg 218w,https://img-getpocket.cdn.mozilla.net/436x218/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fi.insider.com%2F67a3b8f37bb3f854015bde3d%3Fwidth%3D1200%26format%3Djpeg 436w,https://img-getpocket.cdn.mozilla.net/202x101/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fi.insider.com%2F67a3b8f37bb3f854015bde3d%3Fwidth%3D1200%26format%3Djpeg 202w,https://img-getpocket.cdn.mozilla.net/404x202/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fi.insider.com%2F67a3b8f37bb3f854015bde3d%3Fwidth%3D1200%26format%3Djpeg 404w"/></picture></div><a href="https://www.businessinsider.com/doctors-chief-medical-officers-healthcare-google-uber-salesforce-executives-2025-2?utm_source=firefox-newtab-en-us" title="Doctors in the C-Suite" class="ds-card-link"><div class="impression-observer"></div></a><div class="meta"><div class="info-wrap"><p class="source clamp">Business Insider</p><header class="title clamp">Doctors in the C-Suite</header><p class="excerpt clamp">Burned-out doctors are ditching the operating room for the board room.</p></div></div><div class="card-stp-button-hover-background"><div class="card-stp-button-position-wrapper"><button class="card-stp-button"><span class="story-badge-icon icon icon-pocket-save"></span><span data-l10n-id="newtab-pocket-save"></span></button><div class="context-menu-position-container"><button aria-haspopup="true" data-l10n-id="newtab-menu-content-tooltip" data-l10n-args="{&quot;title&quot;:&quot;Doctors in the C-Suite&quot;}" class="context-menu-button icon"></button></div></div></div></article><article class="ds-card   ds-card-title-lines-3 ds-card-desc-lines-3  "><div class="img-wrapper"><picture class="ds-image
+       img
+      
+      
+    "><img loading="lazy" crossorigin="anonymous" sizes="(min-width: 1122px) 296px,(min-width: 866px) 218px,(max-width: 610px) 202px,202px" src="https://bigthink.com/wp-content/themes/bigthink/build/assets/img/CTA-website-mosaic.jpg" srcSet="https://img-getpocket.cdn.mozilla.net/296x148/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fbigthink.com%2Fwp-content%2Fthemes%2Fbigthink%2Fbuild%2Fassets%2Fimg%2FCTA-website-mosaic.jpg 296w,https://img-getpocket.cdn.mozilla.net/592x296/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fbigthink.com%2Fwp-content%2Fthemes%2Fbigthink%2Fbuild%2Fassets%2Fimg%2FCTA-website-mosaic.jpg 592w,https://img-getpocket.cdn.mozilla.net/218x109/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fbigthink.com%2Fwp-content%2Fthemes%2Fbigthink%2Fbuild%2Fassets%2Fimg%2FCTA-website-mosaic.jpg 218w,https://img-getpocket.cdn.mozilla.net/436x218/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fbigthink.com%2Fwp-content%2Fthemes%2Fbigthink%2Fbuild%2Fassets%2Fimg%2FCTA-website-mosaic.jpg 436w,https://img-getpocket.cdn.mozilla.net/202x101/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fbigthink.com%2Fwp-content%2Fthemes%2Fbigthink%2Fbuild%2Fassets%2Fimg%2FCTA-website-mosaic.jpg 202w,https://img-getpocket.cdn.mozilla.net/404x202/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fbigthink.com%2Fwp-content%2Fthemes%2Fbigthink%2Fbuild%2Fassets%2Fimg%2FCTA-website-mosaic.jpg 404w"/></picture></div><a href="https://bigthink.com/business/the-psychology-of-ultra-confidence/?utm_source=firefox-newtab-en-us" title="The Psychology of “Ultra-Confidence” in Business and Sports" class="ds-card-link"><div class="impression-observer"></div></a><div class="meta"><div class="info-wrap"><p class="source clamp">Big Think</p><header class="title clamp">The Psychology of “Ultra-Confidence” in Business and Sports</header><p class="excerpt clamp">Performance psychology reveals the mental techniques elite athletes use to build and maintain their ultra-confidence.</p></div></div><div class="card-stp-button-hover-background"><div class="card-stp-button-position-wrapper"><button class="card-stp-button"><span class="story-badge-icon icon icon-pocket-save"></span><span data-l10n-id="newtab-pocket-save"></span></button><div class="context-menu-position-container"><button aria-haspopup="true" data-l10n-id="newtab-menu-content-tooltip" data-l10n-args="{&quot;title&quot;:&quot;The Psychology of “Ultra-Confidence” in Business and Sports&quot;}" class="context-menu-button icon"></button></div></div></div></article><article class="ds-card   ds-card-title-lines-3 ds-card-desc-lines-3  "><div class="img-wrapper"><picture class="ds-image
+       img
+      
+      
+    "><img loading="lazy" crossorigin="anonymous" sizes="(min-width: 1122px) 296px,(min-width: 866px) 218px,(max-width: 610px) 202px,202px" src="https://assets1.cbsnewsstatic.com/hub/i/r/2025/02/08/cc817012-61ef-4051-a001-35c9bb10a714/thumbnail/1200x630g2/28a22a4af372f2c0cb95b9b31c1ed4a9/friendship-bench-1280.jpg?v=c6b5070a57014f3b00753bf0e763f9c3" srcSet="https://img-getpocket.cdn.mozilla.net/296x148/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fassets1.cbsnewsstatic.com%2Fhub%2Fi%2Fr%2F2025%2F02%2F08%2Fcc817012-61ef-4051-a001-35c9bb10a714%2Fthumbnail%2F1200x630g2%2F28a22a4af372f2c0cb95b9b31c1ed4a9%2Ffriendship-bench-1280.jpg%3Fv%3Dc6b5070a57014f3b00753bf0e763f9c3 296w,https://img-getpocket.cdn.mozilla.net/592x296/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fassets1.cbsnewsstatic.com%2Fhub%2Fi%2Fr%2F2025%2F02%2F08%2Fcc817012-61ef-4051-a001-35c9bb10a714%2Fthumbnail%2F1200x630g2%2F28a22a4af372f2c0cb95b9b31c1ed4a9%2Ffriendship-bench-1280.jpg%3Fv%3Dc6b5070a57014f3b00753bf0e763f9c3 592w,https://img-getpocket.cdn.mozilla.net/218x109/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fassets1.cbsnewsstatic.com%2Fhub%2Fi%2Fr%2F2025%2F02%2F08%2Fcc817012-61ef-4051-a001-35c9bb10a714%2Fthumbnail%2F1200x630g2%2F28a22a4af372f2c0cb95b9b31c1ed4a9%2Ffriendship-bench-1280.jpg%3Fv%3Dc6b5070a57014f3b00753bf0e763f9c3 218w,https://img-getpocket.cdn.mozilla.net/436x218/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fassets1.cbsnewsstatic.com%2Fhub%2Fi%2Fr%2F2025%2F02%2F08%2Fcc817012-61ef-4051-a001-35c9bb10a714%2Fthumbnail%2F1200x630g2%2F28a22a4af372f2c0cb95b9b31c1ed4a9%2Ffriendship-bench-1280.jpg%3Fv%3Dc6b5070a57014f3b00753bf0e763f9c3 436w,https://img-getpocket.cdn.mozilla.net/202x101/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fassets1.cbsnewsstatic.com%2Fhub%2Fi%2Fr%2F2025%2F02%2F08%2Fcc817012-61ef-4051-a001-35c9bb10a714%2Fthumbnail%2F1200x630g2%2F28a22a4af372f2c0cb95b9b31c1ed4a9%2Ffriendship-bench-1280.jpg%3Fv%3Dc6b5070a57014f3b00753bf0e763f9c3 202w,https://img-getpocket.cdn.mozilla.net/404x202/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fassets1.cbsnewsstatic.com%2Fhub%2Fi%2Fr%2F2025%2F02%2F08%2Fcc817012-61ef-4051-a001-35c9bb10a714%2Fthumbnail%2F1200x630g2%2F28a22a4af372f2c0cb95b9b31c1ed4a9%2Ffriendship-bench-1280.jpg%3Fv%3Dc6b5070a57014f3b00753bf0e763f9c3 404w"/></picture></div><a href="https://www.cbsnews.com/news/the-friendship-bench-bringing-talk-therapy-into-underserved-communities/?utm_source=firefox-newtab-en-us" title="The Friendship Bench: Bringing Talk Therapy Into Underserved Communities" class="ds-card-link"><div class="impression-observer"></div></a><div class="meta"><div class="info-wrap"><p class="source clamp">CBS News</p><header class="title clamp">The Friendship Bench: Bringing Talk Therapy Into Underserved Communities</header><p class="excerpt clamp">A program begun in Zimbabwe in which grandmothers and older listeners serve as “first responders” for those seeking mental health assistance in underserved communities has now expanded to nine countries, including the U.S.</p></div></div><div class="card-stp-button-hover-background"><div class="card-stp-button-position-wrapper"><button class="card-stp-button"><span class="story-badge-icon icon icon-pocket-save"></span><span data-l10n-id="newtab-pocket-save"></span></button><div class="context-menu-position-container"><button aria-haspopup="true" data-l10n-id="newtab-menu-content-tooltip" data-l10n-args="{&quot;title&quot;:&quot;The Friendship Bench: Bringing Talk Therapy Into Underserved Communities&quot;}" class="context-menu-button icon"></button></div></div></div></article><article class="ds-card   ds-card-title-lines-3 ds-card-desc-lines-3  "><div class="img-wrapper"><picture class="ds-image
+       img
+      
+      
+    "><img loading="lazy" crossorigin="anonymous" sizes="(min-width: 1122px) 296px,(min-width: 866px) 218px,(max-width: 610px) 202px,202px" src="https://npr.brightspotcdn.com/dims3/default/strip/false/crop/4000x2250+0+208/resize/1400/quality/100/format/jpeg/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2Ffc%2F87%2F652a533f44139a75e877eacd6e25%2Feagles-commanders-42.JPG" srcSet="https://img-getpocket.cdn.mozilla.net/296x148/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fnpr.brightspotcdn.com%2Fdims3%2Fdefault%2Fstrip%2Ffalse%2Fcrop%2F4000x2250%2B0%2B208%2Fresize%2F1400%2Fquality%2F100%2Fformat%2Fjpeg%2F%3Furl%3Dhttp%253A%252F%252Fnpr-brightspot.s3.amazonaws.com%252Ffc%252F87%252F652a533f44139a75e877eacd6e25%252Feagles-commanders-42.JPG 296w,https://img-getpocket.cdn.mozilla.net/592x296/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fnpr.brightspotcdn.com%2Fdims3%2Fdefault%2Fstrip%2Ffalse%2Fcrop%2F4000x2250%2B0%2B208%2Fresize%2F1400%2Fquality%2F100%2Fformat%2Fjpeg%2F%3Furl%3Dhttp%253A%252F%252Fnpr-brightspot.s3.amazonaws.com%252Ffc%252F87%252F652a533f44139a75e877eacd6e25%252Feagles-commanders-42.JPG 592w,https://img-getpocket.cdn.mozilla.net/218x109/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fnpr.brightspotcdn.com%2Fdims3%2Fdefault%2Fstrip%2Ffalse%2Fcrop%2F4000x2250%2B0%2B208%2Fresize%2F1400%2Fquality%2F100%2Fformat%2Fjpeg%2F%3Furl%3Dhttp%253A%252F%252Fnpr-brightspot.s3.amazonaws.com%252Ffc%252F87%252F652a533f44139a75e877eacd6e25%252Feagles-commanders-42.JPG 218w,https://img-getpocket.cdn.mozilla.net/436x218/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fnpr.brightspotcdn.com%2Fdims3%2Fdefault%2Fstrip%2Ffalse%2Fcrop%2F4000x2250%2B0%2B208%2Fresize%2F1400%2Fquality%2F100%2Fformat%2Fjpeg%2F%3Furl%3Dhttp%253A%252F%252Fnpr-brightspot.s3.amazonaws.com%252Ffc%252F87%252F652a533f44139a75e877eacd6e25%252Feagles-commanders-42.JPG 436w,https://img-getpocket.cdn.mozilla.net/202x101/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fnpr.brightspotcdn.com%2Fdims3%2Fdefault%2Fstrip%2Ffalse%2Fcrop%2F4000x2250%2B0%2B208%2Fresize%2F1400%2Fquality%2F100%2Fformat%2Fjpeg%2F%3Furl%3Dhttp%253A%252F%252Fnpr-brightspot.s3.amazonaws.com%252Ffc%252F87%252F652a533f44139a75e877eacd6e25%252Feagles-commanders-42.JPG 202w,https://img-getpocket.cdn.mozilla.net/404x202/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fnpr.brightspotcdn.com%2Fdims3%2Fdefault%2Fstrip%2Ffalse%2Fcrop%2F4000x2250%2B0%2B208%2Fresize%2F1400%2Fquality%2F100%2Fformat%2Fjpeg%2F%3Furl%3Dhttp%253A%252F%252Fnpr-brightspot.s3.amazonaws.com%252Ffc%252F87%252F652a533f44139a75e877eacd6e25%252Feagles-commanders-42.JPG 404w"/></picture></div><a href="https://www.npr.org/2025/02/08/g-s1-47257/the-american-tailgate-why-strangers-recreate-their-living-rooms-in-a-parking-lot?utm_source=firefox-newtab-en-us" title="The American Tailgate: Why Strangers Recreate Their Living Rooms in a Parking Lot" class="ds-card-link"><div class="impression-observer"></div></a><div class="meta"><div class="info-wrap"><p class="source clamp">NPR</p><header class="title clamp">The American Tailgate: Why Strangers Recreate Their Living Rooms in a Parking Lot</header><p class="excerpt clamp">There’s nothing quite like a tailgate, where fans serve food to strangers who share the same passion. We went to a Philadelphia Eagles tailgate to learn what drives this uniquely American tradition.</p></div></div><div class="card-stp-button-hover-background"><div class="card-stp-button-position-wrapper"><button class="card-stp-button"><span class="story-badge-icon icon icon-pocket-save"></span><span data-l10n-id="newtab-pocket-save"></span></button><div class="context-menu-position-container"><button aria-haspopup="true" data-l10n-id="newtab-menu-content-tooltip" data-l10n-args="{&quot;title&quot;:&quot;The American Tailgate: Why Strangers Recreate Their Living Rooms in a Parking Lot&quot;}" class="context-menu-button icon"></button></div></div></div></article><article class="ds-card   ds-card-title-lines-3 ds-card-desc-lines-3  "><div class="img-wrapper"><picture class="ds-image
+       img
+      
+      
+    "><img loading="lazy" crossorigin="anonymous" sizes="(min-width: 1122px) 296px,(min-width: 866px) 218px,(max-width: 610px) 202px,202px" src="https://platform.vox.com/wp-content/uploads/sites/2/2025/02/WAM7290-2.jpg?quality=90&amp;strip=all&amp;crop=0,10.732984293194,100,78.534031413613" srcSet="https://img-getpocket.cdn.mozilla.net/296x148/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fplatform.vox.com%2Fwp-content%2Fuploads%2Fsites%2F2%2F2025%2F02%2FWAM7290-2.jpg%3Fquality%3D90%26strip%3Dall%26crop%3D0%2C10.732984293194%2C100%2C78.534031413613 296w,https://img-getpocket.cdn.mozilla.net/592x296/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fplatform.vox.com%2Fwp-content%2Fuploads%2Fsites%2F2%2F2025%2F02%2FWAM7290-2.jpg%3Fquality%3D90%26strip%3Dall%26crop%3D0%2C10.732984293194%2C100%2C78.534031413613 592w,https://img-getpocket.cdn.mozilla.net/218x109/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fplatform.vox.com%2Fwp-content%2Fuploads%2Fsites%2F2%2F2025%2F02%2FWAM7290-2.jpg%3Fquality%3D90%26strip%3Dall%26crop%3D0%2C10.732984293194%2C100%2C78.534031413613 218w,https://img-getpocket.cdn.mozilla.net/436x218/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fplatform.vox.com%2Fwp-content%2Fuploads%2Fsites%2F2%2F2025%2F02%2FWAM7290-2.jpg%3Fquality%3D90%26strip%3Dall%26crop%3D0%2C10.732984293194%2C100%2C78.534031413613 436w,https://img-getpocket.cdn.mozilla.net/202x101/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fplatform.vox.com%2Fwp-content%2Fuploads%2Fsites%2F2%2F2025%2F02%2FWAM7290-2.jpg%3Fquality%3D90%26strip%3Dall%26crop%3D0%2C10.732984293194%2C100%2C78.534031413613 202w,https://img-getpocket.cdn.mozilla.net/404x202/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fplatform.vox.com%2Fwp-content%2Fuploads%2Fsites%2F2%2F2025%2F02%2FWAM7290-2.jpg%3Fquality%3D90%26strip%3Dall%26crop%3D0%2C10.732984293194%2C100%2C78.534031413613 404w"/></picture></div><a href="https://www.vox.com/future-perfect/398131/factory-farm-air-pollution-space-north-carolina?utm_source=firefox-newtab-en-us" title="We Can See Factory Farm Pollution All the Way From Space" class="ds-card-link"><div class="impression-observer"></div></a><div class="meta"><div class="info-wrap"><p class="source clamp">Vox</p><header class="title clamp">We Can See Factory Farm Pollution All the Way From Space</header><p class="excerpt clamp">But communities of color face the worst ammonia pollution on the ground, a new study reveals.</p></div></div><div class="card-stp-button-hover-background"><div class="card-stp-button-position-wrapper"><button class="card-stp-button"><span class="story-badge-icon icon icon-pocket-save"></span><span data-l10n-id="newtab-pocket-save"></span></button><div class="context-menu-position-container"><button aria-haspopup="true" data-l10n-id="newtab-menu-content-tooltip" data-l10n-args="{&quot;title&quot;:&quot;We Can See Factory Farm Pollution All the Way From Space&quot;}" class="context-menu-button icon"></button></div></div></div></article><article class="ds-card   ds-card-title-lines-3 ds-card-desc-lines-3  "><div class="img-wrapper"><picture class="ds-image
+       img
+      
+      
+    "><img loading="lazy" crossorigin="anonymous" sizes="(min-width: 1122px) 296px,(min-width: 866px) 218px,(max-width: 610px) 202px,202px" src="https://cdn.theatlantic.com/thumbor/TozRh-w07i3PmrEJxmH-JvUhGtg=/0x43:2000x1085/1200x625/media/img/mt/2025/02/AI_frame_deepseek/original.jpg" srcSet="https://img-getpocket.cdn.mozilla.net/296x148/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fcdn.theatlantic.com%2Fthumbor%2FTozRh-w07i3PmrEJxmH-JvUhGtg%3D%2F0x43%3A2000x1085%2F1200x625%2Fmedia%2Fimg%2Fmt%2F2025%2F02%2FAI_frame_deepseek%2Foriginal.jpg 296w,https://img-getpocket.cdn.mozilla.net/592x296/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fcdn.theatlantic.com%2Fthumbor%2FTozRh-w07i3PmrEJxmH-JvUhGtg%3D%2F0x43%3A2000x1085%2F1200x625%2Fmedia%2Fimg%2Fmt%2F2025%2F02%2FAI_frame_deepseek%2Foriginal.jpg 592w,https://img-getpocket.cdn.mozilla.net/218x109/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fcdn.theatlantic.com%2Fthumbor%2FTozRh-w07i3PmrEJxmH-JvUhGtg%3D%2F0x43%3A2000x1085%2F1200x625%2Fmedia%2Fimg%2Fmt%2F2025%2F02%2FAI_frame_deepseek%2Foriginal.jpg 218w,https://img-getpocket.cdn.mozilla.net/436x218/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fcdn.theatlantic.com%2Fthumbor%2FTozRh-w07i3PmrEJxmH-JvUhGtg%3D%2F0x43%3A2000x1085%2F1200x625%2Fmedia%2Fimg%2Fmt%2F2025%2F02%2FAI_frame_deepseek%2Foriginal.jpg 436w,https://img-getpocket.cdn.mozilla.net/202x101/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fcdn.theatlantic.com%2Fthumbor%2FTozRh-w07i3PmrEJxmH-JvUhGtg%3D%2F0x43%3A2000x1085%2F1200x625%2Fmedia%2Fimg%2Fmt%2F2025%2F02%2FAI_frame_deepseek%2Foriginal.jpg 202w,https://img-getpocket.cdn.mozilla.net/404x202/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fcdn.theatlantic.com%2Fthumbor%2FTozRh-w07i3PmrEJxmH-JvUhGtg%3D%2F0x43%3A2000x1085%2F1200x625%2Fmedia%2Fimg%2Fmt%2F2025%2F02%2FAI_frame_deepseek%2Foriginal.jpg 404w"/></picture></div><a href="https://www.theatlantic.com/newsletters/archive/2025/02/what-is-ai-distillation/681616/?utm_source=firefox-newtab-en-us" title="What Is AI Distillation?" class="ds-card-link"><div class="impression-observer"></div></a><div class="meta"><div class="info-wrap"><p class="source clamp">The Atlantic</p><header class="title clamp">What Is AI Distillation?</header><p class="excerpt clamp">And what does it mean if DeepSeek did it?</p></div></div><div class="card-stp-button-hover-background"><div class="card-stp-button-position-wrapper"><button class="card-stp-button"><span class="story-badge-icon icon icon-pocket-save"></span><span data-l10n-id="newtab-pocket-save"></span></button><div class="context-menu-position-container"><button aria-haspopup="true" data-l10n-id="newtab-menu-content-tooltip" data-l10n-args="{&quot;title&quot;:&quot;What Is AI Distillation?&quot;}" class="context-menu-button icon"></button></div></div></div></article><article class="ds-card   ds-card-title-lines-3 ds-card-desc-lines-3  "><div class="img-wrapper"><picture class="ds-image
+       img
+      
+      
+    "><img loading="lazy" crossorigin="anonymous" sizes="(min-width: 1122px) 296px,(min-width: 866px) 218px,(max-width: 610px) 202px,202px" src="https://image.cnbcfm.com/api/v1/image/108086863-1736949125630-gettyimages-2193614057-img_5391_mag8oxy9.jpeg?v=1738834860&amp;w=1920&amp;h=1080" srcSet="https://img-getpocket.cdn.mozilla.net/296x148/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fimage.cnbcfm.com%2Fapi%2Fv1%2Fimage%2F108086863-1736949125630-gettyimages-2193614057-img_5391_mag8oxy9.jpeg%3Fv%3D1738834860%26w%3D1920%26h%3D1080 296w,https://img-getpocket.cdn.mozilla.net/592x296/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fimage.cnbcfm.com%2Fapi%2Fv1%2Fimage%2F108086863-1736949125630-gettyimages-2193614057-img_5391_mag8oxy9.jpeg%3Fv%3D1738834860%26w%3D1920%26h%3D1080 592w,https://img-getpocket.cdn.mozilla.net/218x109/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fimage.cnbcfm.com%2Fapi%2Fv1%2Fimage%2F108086863-1736949125630-gettyimages-2193614057-img_5391_mag8oxy9.jpeg%3Fv%3D1738834860%26w%3D1920%26h%3D1080 218w,https://img-getpocket.cdn.mozilla.net/436x218/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fimage.cnbcfm.com%2Fapi%2Fv1%2Fimage%2F108086863-1736949125630-gettyimages-2193614057-img_5391_mag8oxy9.jpeg%3Fv%3D1738834860%26w%3D1920%26h%3D1080 436w,https://img-getpocket.cdn.mozilla.net/202x101/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fimage.cnbcfm.com%2Fapi%2Fv1%2Fimage%2F108086863-1736949125630-gettyimages-2193614057-img_5391_mag8oxy9.jpeg%3Fv%3D1738834860%26w%3D1920%26h%3D1080 202w,https://img-getpocket.cdn.mozilla.net/404x202/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fimage.cnbcfm.com%2Fapi%2Fv1%2Fimage%2F108086863-1736949125630-gettyimages-2193614057-img_5391_mag8oxy9.jpeg%3Fv%3D1738834860%26w%3D1920%26h%3D1080 404w"/></picture></div><a href="https://www.cnbc.com/2025/02/10/chinese-evs-compete-with-no-down-payment-5-year-interest-free-loans.html?utm_source=firefox-newtab-en-us" title="How EV Makers in China Are Ramping up Competition: No Down Payment and 5-Year Interest-Free Loans" class="ds-card-link"><div class="impression-observer"></div></a><div class="meta"><div class="info-wrap"><p class="source clamp">CNBC</p><header class="title clamp">How EV Makers in China Are Ramping up Competition: No Down Payment and 5-Year Interest-Free Loans</header><p class="excerpt clamp">Electric car companies in China welcomed the Year of the Snake with several incentives, after major automakers reported a drop in deliveries at the start of the year.</p></div></div><div class="card-stp-button-hover-background"><div class="card-stp-button-position-wrapper"><button class="card-stp-button"><span class="story-badge-icon icon icon-pocket-save"></span><span data-l10n-id="newtab-pocket-save"></span></button><div class="context-menu-position-container"><button aria-haspopup="true" data-l10n-id="newtab-menu-content-tooltip" data-l10n-args="{&quot;title&quot;:&quot;How EV Makers in China Are Ramping up Competition: No Down Payment and 5-Year Interest-Free Loans&quot;}" class="context-menu-button icon"></button></div></div></div></article><article class="ds-card   ds-card-title-lines-3 ds-card-desc-lines-3  "><div class="img-wrapper"><picture class="ds-image
+       img
+      
+      
+    "><img loading="lazy" crossorigin="anonymous" sizes="(min-width: 1122px) 296px,(min-width: 866px) 218px,(max-width: 610px) 202px,202px" src="https://www.marthastewart.com/thmb/3NH7m8Vfs5JOiWHKIAmqJj5kPcg=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/best-terrarium-plants-lead-getty-0723-1201ee5b72384359ae13782f88d48124.jpg" srcSet="https://img-getpocket.cdn.mozilla.net/296x148/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fwww.marthastewart.com%2Fthmb%2F3NH7m8Vfs5JOiWHKIAmqJj5kPcg%3D%2F1500x0%2Ffilters%3Ano_upscale()%3Amax_bytes(150000)%3Astrip_icc()%2Fbest-terrarium-plants-lead-getty-0723-1201ee5b72384359ae13782f88d48124.jpg 296w,https://img-getpocket.cdn.mozilla.net/592x296/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fwww.marthastewart.com%2Fthmb%2F3NH7m8Vfs5JOiWHKIAmqJj5kPcg%3D%2F1500x0%2Ffilters%3Ano_upscale()%3Amax_bytes(150000)%3Astrip_icc()%2Fbest-terrarium-plants-lead-getty-0723-1201ee5b72384359ae13782f88d48124.jpg 592w,https://img-getpocket.cdn.mozilla.net/218x109/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fwww.marthastewart.com%2Fthmb%2F3NH7m8Vfs5JOiWHKIAmqJj5kPcg%3D%2F1500x0%2Ffilters%3Ano_upscale()%3Amax_bytes(150000)%3Astrip_icc()%2Fbest-terrarium-plants-lead-getty-0723-1201ee5b72384359ae13782f88d48124.jpg 218w,https://img-getpocket.cdn.mozilla.net/436x218/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fwww.marthastewart.com%2Fthmb%2F3NH7m8Vfs5JOiWHKIAmqJj5kPcg%3D%2F1500x0%2Ffilters%3Ano_upscale()%3Amax_bytes(150000)%3Astrip_icc()%2Fbest-terrarium-plants-lead-getty-0723-1201ee5b72384359ae13782f88d48124.jpg 436w,https://img-getpocket.cdn.mozilla.net/202x101/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fwww.marthastewart.com%2Fthmb%2F3NH7m8Vfs5JOiWHKIAmqJj5kPcg%3D%2F1500x0%2Ffilters%3Ano_upscale()%3Amax_bytes(150000)%3Astrip_icc()%2Fbest-terrarium-plants-lead-getty-0723-1201ee5b72384359ae13782f88d48124.jpg 202w,https://img-getpocket.cdn.mozilla.net/404x202/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fwww.marthastewart.com%2Fthmb%2F3NH7m8Vfs5JOiWHKIAmqJj5kPcg%3D%2F1500x0%2Ffilters%3Ano_upscale()%3Amax_bytes(150000)%3Astrip_icc()%2Fbest-terrarium-plants-lead-getty-0723-1201ee5b72384359ae13782f88d48124.jpg 404w"/></picture></div><a href="https://www.marthastewart.com/best-terrarium-plants-8786184?utm_source=firefox-newtab-en-us" title="The 10 Best Terrarium Plants for Your Mini Ecosystem" class="ds-card-link"><div class="impression-observer"></div></a><div class="meta"><div class="info-wrap"><p class="source clamp">Martha Stewart</p><header class="title clamp">The 10 Best Terrarium Plants for Your Mini Ecosystem</header><p class="excerpt clamp">Everything you need to know about choosing plants and cultivating your own modern terrarium.</p></div></div><div class="card-stp-button-hover-background"><div class="card-stp-button-position-wrapper"><button class="card-stp-button"><span class="story-badge-icon icon icon-pocket-save"></span><span data-l10n-id="newtab-pocket-save"></span></button><div class="context-menu-position-container"><button aria-haspopup="true" data-l10n-id="newtab-menu-content-tooltip" data-l10n-args="{&quot;title&quot;:&quot;The 10 Best Terrarium Plants for Your Mini Ecosystem&quot;}" class="context-menu-button icon"></button></div></div></div></article><article class="ds-card   ds-card-title-lines-3 ds-card-desc-lines-3  "><div class="img-wrapper"><picture class="ds-image
+       img
+      
+      
+    "><img loading="lazy" crossorigin="anonymous" sizes="(min-width: 1122px) 296px,(min-width: 866px) 218px,(max-width: 610px) 202px,202px" src="https://a2.espncdn.com/combiner/i?img=%2Fphoto%2F2025%2F0204%2Fr1447281_1296x729_16%2D9.jpg" srcSet="https://img-getpocket.cdn.mozilla.net/296x148/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fa2.espncdn.com%2Fcombiner%2Fi%3Fimg%3D%252Fphoto%252F2025%252F0204%252Fr1447281_1296x729_16%252D9.jpg 296w,https://img-getpocket.cdn.mozilla.net/592x296/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fa2.espncdn.com%2Fcombiner%2Fi%3Fimg%3D%252Fphoto%252F2025%252F0204%252Fr1447281_1296x729_16%252D9.jpg 592w,https://img-getpocket.cdn.mozilla.net/218x109/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fa2.espncdn.com%2Fcombiner%2Fi%3Fimg%3D%252Fphoto%252F2025%252F0204%252Fr1447281_1296x729_16%252D9.jpg 218w,https://img-getpocket.cdn.mozilla.net/436x218/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fa2.espncdn.com%2Fcombiner%2Fi%3Fimg%3D%252Fphoto%252F2025%252F0204%252Fr1447281_1296x729_16%252D9.jpg 436w,https://img-getpocket.cdn.mozilla.net/202x101/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fa2.espncdn.com%2Fcombiner%2Fi%3Fimg%3D%252Fphoto%252F2025%252F0204%252Fr1447281_1296x729_16%252D9.jpg 202w,https://img-getpocket.cdn.mozilla.net/404x202/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fa2.espncdn.com%2Fcombiner%2Fi%3Fimg%3D%252Fphoto%252F2025%252F0204%252Fr1447281_1296x729_16%252D9.jpg 404w"/></picture></div><a href="https://www.espn.com/nfl/story/_/id/43738806/rooney-rule-founders-agree-goodell-point-shortage-offensive-coaches?utm_source=firefox-newtab-en-us" title="The Rooney Rule Works, but Pipeline Adjustments Are Needed, Founders Say" class="ds-card-link"><div class="impression-observer"></div></a><div class="meta"><div class="info-wrap"><p class="source clamp">ESPN</p><header class="title clamp">The Rooney Rule Works, but Pipeline Adjustments Are Needed, Founders Say</header><p class="excerpt clamp">They point to a paucity of black offensive coordinators, the pool often tapped for new head coaches.</p></div></div><div class="card-stp-button-hover-background"><div class="card-stp-button-position-wrapper"><button class="card-stp-button"><span class="story-badge-icon icon icon-pocket-save"></span><span data-l10n-id="newtab-pocket-save"></span></button><div class="context-menu-position-container"><button aria-haspopup="true" data-l10n-id="newtab-menu-content-tooltip" data-l10n-args="{&quot;title&quot;:&quot;The Rooney Rule Works, but Pipeline Adjustments Are Needed, Founders Say&quot;}" class="context-menu-button icon"></button></div></div></div></article><article class="ds-card   ds-card-title-lines-3 ds-card-desc-lines-3  "><div class="img-wrapper"><picture class="ds-image
+       img
+      
+      
+    "><img loading="lazy" crossorigin="anonymous" sizes="(min-width: 1122px) 296px,(min-width: 866px) 218px,(max-width: 610px) 202px,202px" src="https://media.wired.com/photos/67a63fd656bbd7da99457dd4/191:100/w_1280,c_limit/Final_V1_2400x1350.jpg" srcSet="https://img-getpocket.cdn.mozilla.net/296x148/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fmedia.wired.com%2Fphotos%2F67a63fd656bbd7da99457dd4%2F191%3A100%2Fw_1280%2Cc_limit%2FFinal_V1_2400x1350.jpg 296w,https://img-getpocket.cdn.mozilla.net/592x296/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fmedia.wired.com%2Fphotos%2F67a63fd656bbd7da99457dd4%2F191%3A100%2Fw_1280%2Cc_limit%2FFinal_V1_2400x1350.jpg 592w,https://img-getpocket.cdn.mozilla.net/218x109/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fmedia.wired.com%2Fphotos%2F67a63fd656bbd7da99457dd4%2F191%3A100%2Fw_1280%2Cc_limit%2FFinal_V1_2400x1350.jpg 218w,https://img-getpocket.cdn.mozilla.net/436x218/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fmedia.wired.com%2Fphotos%2F67a63fd656bbd7da99457dd4%2F191%3A100%2Fw_1280%2Cc_limit%2FFinal_V1_2400x1350.jpg 436w,https://img-getpocket.cdn.mozilla.net/202x101/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fmedia.wired.com%2Fphotos%2F67a63fd656bbd7da99457dd4%2F191%3A100%2Fw_1280%2Cc_limit%2FFinal_V1_2400x1350.jpg 202w,https://img-getpocket.cdn.mozilla.net/404x202/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fmedia.wired.com%2Fphotos%2F67a63fd656bbd7da99457dd4%2F191%3A100%2Fw_1280%2Cc_limit%2FFinal_V1_2400x1350.jpg 404w"/></picture></div><a href="https://www.wired.com/story/ai-save-kill-dating-apps/?utm_source=firefox-newtab-en-us" title="AI Will Save Dating Apps. or Maybe Finally Kill Them" class="ds-card-link"><div class="impression-observer"></div></a><div class="meta"><div class="info-wrap"><p class="source clamp">WIRED</p><header class="title clamp">AI Will Save Dating Apps. or Maybe Finally Kill Them</header><p class="excerpt clamp">A slew of tools—from Iris Dating to Grindr’s forthcoming “wingman”—promise that they can increase your odds of finding someone with AI. So far, the results are mixed.</p></div></div><div class="card-stp-button-hover-background"><div class="card-stp-button-position-wrapper"><button class="card-stp-button"><span class="story-badge-icon icon icon-pocket-save"></span><span data-l10n-id="newtab-pocket-save"></span></button><div class="context-menu-position-container"><button aria-haspopup="true" data-l10n-id="newtab-menu-content-tooltip" data-l10n-args="{&quot;title&quot;:&quot;AI Will Save Dating Apps. or Maybe Finally Kill Them&quot;}" class="context-menu-button icon"></button></div></div></div></article><article class="ds-card   ds-card-title-lines-3 ds-card-desc-lines-3  "><div class="img-wrapper"><picture class="ds-image
+       img
+      
+      
+    "><img loading="lazy" crossorigin="anonymous" sizes="(min-width: 1122px) 296px,(min-width: 866px) 218px,(max-width: 610px) 202px,202px" src="https://images.axios.com/E6NoQhoZLLaa8DPvcUD8MKIMg_k=/0x0:1920x1080/1366x768/2025/02/07/1738957238532.jpg" srcSet="https://img-getpocket.cdn.mozilla.net/296x148/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fimages.axios.com%2FE6NoQhoZLLaa8DPvcUD8MKIMg_k%3D%2F0x0%3A1920x1080%2F1366x768%2F2025%2F02%2F07%2F1738957238532.jpg 296w,https://img-getpocket.cdn.mozilla.net/592x296/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fimages.axios.com%2FE6NoQhoZLLaa8DPvcUD8MKIMg_k%3D%2F0x0%3A1920x1080%2F1366x768%2F2025%2F02%2F07%2F1738957238532.jpg 592w,https://img-getpocket.cdn.mozilla.net/218x109/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fimages.axios.com%2FE6NoQhoZLLaa8DPvcUD8MKIMg_k%3D%2F0x0%3A1920x1080%2F1366x768%2F2025%2F02%2F07%2F1738957238532.jpg 218w,https://img-getpocket.cdn.mozilla.net/436x218/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fimages.axios.com%2FE6NoQhoZLLaa8DPvcUD8MKIMg_k%3D%2F0x0%3A1920x1080%2F1366x768%2F2025%2F02%2F07%2F1738957238532.jpg 436w,https://img-getpocket.cdn.mozilla.net/202x101/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fimages.axios.com%2FE6NoQhoZLLaa8DPvcUD8MKIMg_k%3D%2F0x0%3A1920x1080%2F1366x768%2F2025%2F02%2F07%2F1738957238532.jpg 202w,https://img-getpocket.cdn.mozilla.net/404x202/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fimages.axios.com%2FE6NoQhoZLLaa8DPvcUD8MKIMg_k%3D%2F0x0%3A1920x1080%2F1366x768%2F2025%2F02%2F07%2F1738957238532.jpg 404w"/></picture></div><a href="https://www.axios.com/2025/02/09/ice-students-carrying-visas-passports?utm_source=firefox-newtab-en-us" title="ICE Fears Prompt Foreign Workers and Students to Keep Visas Close" class="ds-card-link"><div class="impression-observer"></div></a><div class="meta"><div class="info-wrap"><p class="source clamp">Axios</p><header class="title clamp">ICE Fears Prompt Foreign Workers and Students to Keep Visas Close</header><p class="excerpt clamp">It’s a snapshot of America in 2025.</p></div></div><div class="card-stp-button-hover-background"><div class="card-stp-button-position-wrapper"><button class="card-stp-button"><span class="story-badge-icon icon icon-pocket-save"></span><span data-l10n-id="newtab-pocket-save"></span></button><div class="context-menu-position-container"><button aria-haspopup="true" data-l10n-id="newtab-menu-content-tooltip" data-l10n-args="{&quot;title&quot;:&quot;ICE Fears Prompt Foreign Workers and Students to Keep Visas Close&quot;}" class="context-menu-button icon"></button></div></div></div></article><article class="ds-card   ds-card-title-lines-3 ds-card-desc-lines-3  "><div class="img-wrapper"><picture class="ds-image
+       img
+      
+      
+    "><img loading="lazy" crossorigin="anonymous" sizes="(min-width: 1122px) 296px,(min-width: 866px) 218px,(max-width: 610px) 202px,202px" src="https://imageio.forbes.com/specials-images/imageserve/67769679c210a13d1dd23012/0x0.jpg?format=jpg&amp;height=900&amp;width=1600&amp;fit=bounds" srcSet="https://img-getpocket.cdn.mozilla.net/296x148/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fimageio.forbes.com%2Fspecials-images%2Fimageserve%2F67769679c210a13d1dd23012%2F0x0.jpg%3Fformat%3Djpg%26height%3D900%26width%3D1600%26fit%3Dbounds 296w,https://img-getpocket.cdn.mozilla.net/592x296/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fimageio.forbes.com%2Fspecials-images%2Fimageserve%2F67769679c210a13d1dd23012%2F0x0.jpg%3Fformat%3Djpg%26height%3D900%26width%3D1600%26fit%3Dbounds 592w,https://img-getpocket.cdn.mozilla.net/218x109/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fimageio.forbes.com%2Fspecials-images%2Fimageserve%2F67769679c210a13d1dd23012%2F0x0.jpg%3Fformat%3Djpg%26height%3D900%26width%3D1600%26fit%3Dbounds 218w,https://img-getpocket.cdn.mozilla.net/436x218/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fimageio.forbes.com%2Fspecials-images%2Fimageserve%2F67769679c210a13d1dd23012%2F0x0.jpg%3Fformat%3Djpg%26height%3D900%26width%3D1600%26fit%3Dbounds 436w,https://img-getpocket.cdn.mozilla.net/202x101/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fimageio.forbes.com%2Fspecials-images%2Fimageserve%2F67769679c210a13d1dd23012%2F0x0.jpg%3Fformat%3Djpg%26height%3D900%26width%3D1600%26fit%3Dbounds 202w,https://img-getpocket.cdn.mozilla.net/404x202/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fimageio.forbes.com%2Fspecials-images%2Fimageserve%2F67769679c210a13d1dd23012%2F0x0.jpg%3Fformat%3Djpg%26height%3D900%26width%3D1600%26fit%3Dbounds 404w"/></picture></div><a href="https://www.forbes.com/sites/andrewrosen/2025/02/06/how-to-plan-your-retirement-for-a-life-of-travel/?utm_source=firefox-newtab-en-us" title="How to Plan Your Retirement for a Life of Travel" class="ds-card-link"><div class="impression-observer"></div></a><div class="meta"><div class="info-wrap"><p class="source clamp">Forbes</p><header class="title clamp">How to Plan Your Retirement for a Life of Travel</header><p class="excerpt clamp">A retirement full of travel requires thoughtful planning, financial discipline, and a clear roadmap.</p></div></div><div class="card-stp-button-hover-background"><div class="card-stp-button-position-wrapper"><button class="card-stp-button"><span class="story-badge-icon icon icon-pocket-save"></span><span data-l10n-id="newtab-pocket-save"></span></button><div class="context-menu-position-container"><button aria-haspopup="true" data-l10n-id="newtab-menu-content-tooltip" data-l10n-args="{&quot;title&quot;:&quot;How to Plan Your Retirement for a Life of Travel&quot;}" class="context-menu-button icon"></button></div></div></div></article><article class="ds-card   ds-card-title-lines-3 ds-card-desc-lines-3  "><div class="img-wrapper"><picture class="ds-image
+       img
+      
+      
+    "><img loading="lazy" crossorigin="anonymous" sizes="(min-width: 1122px) 296px,(min-width: 866px) 218px,(max-width: 610px) 202px,202px" src="https://lifehacker.com/imagery/articles/01JKG42RGBGN5C6Z42XA2JV25H/hero-image.fill.size_1200x675.jpg" srcSet="https://img-getpocket.cdn.mozilla.net/296x148/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Flifehacker.com%2Fimagery%2Farticles%2F01JKG42RGBGN5C6Z42XA2JV25H%2Fhero-image.fill.size_1200x675.jpg 296w,https://img-getpocket.cdn.mozilla.net/592x296/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Flifehacker.com%2Fimagery%2Farticles%2F01JKG42RGBGN5C6Z42XA2JV25H%2Fhero-image.fill.size_1200x675.jpg 592w,https://img-getpocket.cdn.mozilla.net/218x109/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Flifehacker.com%2Fimagery%2Farticles%2F01JKG42RGBGN5C6Z42XA2JV25H%2Fhero-image.fill.size_1200x675.jpg 218w,https://img-getpocket.cdn.mozilla.net/436x218/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Flifehacker.com%2Fimagery%2Farticles%2F01JKG42RGBGN5C6Z42XA2JV25H%2Fhero-image.fill.size_1200x675.jpg 436w,https://img-getpocket.cdn.mozilla.net/202x101/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Flifehacker.com%2Fimagery%2Farticles%2F01JKG42RGBGN5C6Z42XA2JV25H%2Fhero-image.fill.size_1200x675.jpg 202w,https://img-getpocket.cdn.mozilla.net/404x202/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Flifehacker.com%2Fimagery%2Farticles%2F01JKG42RGBGN5C6Z42XA2JV25H%2Fhero-image.fill.size_1200x675.jpg 404w"/></picture></div><a href="https://lifehacker.com/tech/apple-needs-to-launch-more-apps-on-android?utm_source=firefox-newtab-en-us" title="Apple ‘Invites’ Proves Why the Company Needs to Launch More Apps on Android" class="ds-card-link"><div class="impression-observer"></div></a><div class="meta"><div class="info-wrap"><p class="source clamp">Lifehacker</p><header class="title clamp">Apple ‘Invites’ Proves Why the Company Needs to Launch More Apps on Android</header><p class="excerpt clamp">Should Apple be more like Google with its app strategy?</p></div></div><div class="card-stp-button-hover-background"><div class="card-stp-button-position-wrapper"><button class="card-stp-button"><span class="story-badge-icon icon icon-pocket-save"></span><span data-l10n-id="newtab-pocket-save"></span></button><div class="context-menu-position-container"><button aria-haspopup="true" data-l10n-id="newtab-menu-content-tooltip" data-l10n-args="{&quot;title&quot;:&quot;Apple ‘Invites’ Proves Why the Company Needs to Launch More Apps on Android&quot;}" class="context-menu-button icon"></button></div></div></div></article></div></div></div><div><div class="ds-navigation ds-navigation-left-align "><span class="ds-navigation-header" data-l10n-id="newtab-pocket-read-more"></span><ul><li><a href="https://getpocket.com/explore/self-improvement?utm_source=pocket-newtab">Self improvement</a></li><li><a href="https://getpocket.com/explore/food?utm_source=pocket-newtab">Food</a></li><li><a href="https://getpocket.com/explore/entertainment?utm_source=pocket-newtab">Entertainment</a></li><li><a href="https://getpocket.com/explore/health?utm_source=pocket-newtab">Health &amp; fitness</a></li><li><a href="https://getpocket.com/explore/science?utm_source=pocket-newtab">Science</a></li><li><a href="https://getpocket.com/explore?utm_source=pocket-newtab">More recommendations ›</a></li></ul><a href="https://www.mozilla.org/privacy/firefox/#recommend-relevant-content" class="ds-navigation-privacy"><span data-l10n-id="newtab-section-menu-privacy-notice"></span></a></div></div></div></div><style data-styles="[[null,{&quot;.ds-navigation&quot;:&quot;margin-top: -10px;&quot;}]]"></style></div></div></section><div class="discovery-stream ds-layout"><div class="ds-column ds-column-12"><div class="ds-column-grid"><div></div></div></div><style data-styles="[[null]]"></style></div></div></main><aside></aside></div></div>
+    </div>
+    <div id="footer-asrouter-container" role="presentation"></div>
+    <script src="about:home?jscache"></script>
+    <script async type="module" src="chrome://global/content/elements/moz-toggle.mjs"></script>
+  </body>
+</html>
+window.__FROM_STARTUP_CACHE__ = true;
+window.__STARTUP_STATE__ = {
+	"TopSites": {
+		"initialized": true,
+		"rows": [
+			{
+				"isDefault": true,
+				"url": "https://www.amazon.ca/?tag=admpdesktopca-20&ref=pd_sl_9b1ed29b25abe07df5a4e450e4107fbf32e6c6569c0c79663c326746&mfadid=adm",
+				"hostname": "amazon",
+				"sendAttributionRequest": false,
+				"label": "Amazon",
+				"show_sponsored_label": true,
+				"sponsored_position": 1,
+				"sponsored_click_url": "https://bridge.lga1.admarketplace.net/ctp?version=1.0.0&encp=jnEYxmwVJQkX5QbUftINI%3DwqgClnxGEkgClrfZqZfp2YfCfm4CbnHnwqI%3DEYD%3DcYHFdZgF49DnIQfRNnCdj7scvGDGwgEkw_Cwj%3DiEvD2C4i3dqXFE3BJl_lEGjiEccaCD3qJEwuFGv4JEDYFGvIfD_SJ%3Dv43kkZCd3IfqkYCGv4iwqZCq3I7ReOgClWftaW7REkiCkm7RERiCkY7ndZj9eKiF3agCbnirjvIpkZ4Cxk4pbm4pqnxGEwxRwvIpkX4pxr1C2r4pxY4ZDa1pHd1C8nJG4kjpkW7R7kHnWzIncTxmDnx93kiF2zftIqx%3D4vIpkW7ncWfZd1sCeaCc37jl__f9w43%3D4kCFqWsDdpf9NfElEkCc34fDdl2CEHsnfXCD3ojYIQj9wvIpkZ7n4YIFwqgCLX1plnx%3DXvIpkXfpbr7n3Zx%3D7vIpkXfpl_7n3Zx%3DcqjnwqgClWfpqnI94WHGEqjnwqgCHm1pqnI94WiFzvIpkX4pLY7ncqxmXvIpkX4pxr1C2r4pxY1C8m4Qf_1pLnxmXVj%3D_dJCkX7nEUEE7fgDX82C4nEw3%2F1cxmJRc5EqXZID_3j9vki94TjZclIQ7YFRNEsl4iIw7GCZc91%3DaW1l4v2Rc%3DDre47C7%3DEmNDJmzvfndnJ9Hm2qjGDrevJp7S2qv8EDv%3DIYDY3R36CELmsR2W4lIoDq_rEmXFJm_qJp3w3rcE3nznfrE8JRc_4cwZim3%3DCwc14%3DkkHRj%2FFEqW4cIPCdEH4l4lCZ7NjEIcsc8W2mIc4dE7jq_Ufk7oImAwfqIoDnz2xpIuxC3g2GwP4kXifrEmiYIYj%3DzZgB%2FM6QTS1Y%2FniFwQgBkX1YkX1YkX1YkX1YkX7n4WgCbU4p8XftWW5plWfZbTftWW5plWfpxT5tWT593vJ%3DEZxtXOHF4oInwTJczQJm_qjF4vjnDy",
+				"sponsored_impression_url": "https://imp.mt48.net/static?id=7RHzfOIXjFEYsBdvIpkX4pxr1C2r4pxY4ZDa1pHd1C8nj9wWIBdvIpkY7n4YIFckiGIw5FwqgCLX1plnx%3DXNHmEuIF%2Bk5FwqgClWfpxnHF2uxmETIF4kiFzU5FwqgClk4Zx%2B4pxk4Z8%2BfQHmfZqa1tIZJ%3Dzk5F%2BdJF7wxQkX",
+				"sponsored_tile_id": 74357,
+				"partner": "amp",
+				"favicon": "https://ads-img.mozilla.org/v1/images?image_data=Cj0KO2h0dHBzOi8vYW1wLWFzc2V0LjQ1dHUxYzAuY29tL2Fzc2V0cy8xMDA5LzE1MjEyMjgwODcxNzYuanBnEiAV36GGy4uG4Kc3hcPXsQNe08loM62OgGAgcMju8zD3jQ",
+				"faviconSize": 200,
+				"typedBonus": true
+			},
+			{
+				"isDefault": true,
+				"url": "https://temuaffiliateprogram.pxf.io/Jz52V7?subId1=147794747275886592&mfadid=adm",
+				"hostname": "temuaffiliateprogram.pxf",
+				"sendAttributionRequest": false,
+				"label": "Temu",
+				"show_sponsored_label": true,
+				"sponsored_position": 2,
+				"sponsored_click_url": "https://bridge.lga1.admarketplace.net/ctp?version=1.0.0&encp=jnEYxmwVJQkX5QbUftINI%3DwqgC8nxGEkgClrfZqZfp2YfCfm4CbnHnwqI%3DEYD%3DcYHFdZgDdDDC41snTWCRv3fkdSHZcg3%3DxYCw3osBIWHQkXfpbUftIdj%3Dqz4OIdImqzfOIuxr3WGmwqspkW7nuriF2zfZDa1pxYfZ2r7RcdIG7_iF2zfC2r4Zqk4Z2rfQxd1pLm4CqY7ndZj92zftIYj%3D7TgFINJ94w7Rekj%3DwqgCbnI9eQiF2zftIQj9wvIpkZ7n4YIFwqgClW4plr7ReTiF2zfCbW4YIqxreOiF2zfC2rftIqxreNI9IvIpkX4pfX7n3Zx%3DcdI9IvIpkafQDk7n3Zx%3DwViF2zfCfkfYINI94TiF2zfC2r4Zqk4Z2rfQqY4QHkfZbd7R4TJr3UjFkzfOIwJwEBCpdfBllZIwIDipNG4wqdjF4ojtDY2nN_4C3u2qXGfF4lCDjSiq3cEDcNsGIY2dE6iFxZxnkWsC44iE7nHnjEfw4djn_93mzOxnN8JrveDdjgjc7uicxwfq8WEcEdHFNYE9eHFqImFEc8BwEl4mues%3Djr3D_axkka4E3UjrxYFq4eiZN94l2nxR3VxZkS1Y%2FM6QTS7nwvHZkufCTufCTufCTufCTufBIQxpkW5Qlm4CbTftWY1pLr5pbTftWXfpbr5tWT5tXkiFXwxrbTHncQimIvJ%3DXKHmzUI9EQiGIw",
+				"sponsored_impression_url": "https://imp.mt48.net/static?id=7RHzfOIXjFEYsBdvIpkX4pxr1C2r4pxY4ZDa1pHd1C8nj9wWIBdvIpkY7n4YIFckiGIw5FwqgClW4plr7ReTHF4wJFEUjtdvIpkXfpbr7ncq5G4wJ%3DEQj%3DwVJOdvIpkX4pxr1C2r4pxY1C8m4Q2ZfpDnxmXVjtdUjFdOIG8zfLyy",
+				"sponsored_tile_id": 75169,
+				"partner": "amp",
+				"favicon": "https://ads-img.mozilla.org/v1/images?image_data=CnAKbmh0dHBzOi8vYW1wLWFzc2V0LjQ1dHUxYzAuY29tL2Fzc2V0cy8xNDMxL2UxYjMxOGJkNDkzNDYyN2Q3MjZkNTFmOWM1ZDQyNTVjZWFhNjI0MWRkYmY4M2RmMDE5MGUyMjBiN2E4MWUyODUuanBnEiCF1FoJ1nRR2YvYgV1umBhTKA482BKOK56b6gVGpg0XUQ",
+				"faviconSize": 200,
+				"typedBonus": true
+			},
+			{
+				"isDefault": true,
+				"url": "https://hotels.prf.hn/l/jXnvxoO/pubref:147794747275886592?mfadid=adm",
+				"hostname": "hotels.prf",
+				"sendAttributionRequest": false,
+				"label": "Hotels.com",
+				"show_sponsored_label": true,
+				"sponsored_position": 3,
+				"sponsored_click_url": "https://bridge.lga1.admarketplace.net/ctp?version=1.0.0&encp=jnEYxmwVJQkX5QbUftINI%3DwqgCfnxGEkgClrfZqZfp2YfCfm4CbnHnwqI%3DEYD%3DcYHFdZgDdDDC41snTWCRv3fkdSHZcg3%3DxYCw3osBIWHQkXfpbUftIdj%3Dqz4OIdImqzfOIuxr3WGmwqspkW7nuriF2zfZDa1pLmfpqk7RcdIG7_iF2zfC2r4Zqk4Z2rfQxd1pLm4CqY7ndZj92zftIYj%3D7TgFINJ94w7Rekj%3DwqgCbnI9eQiF2zftIQj9wvIpkZ7n4YIFwqgClW4C8m7ReTiF2zfCbW4YIqxreOiF2zfC2rfYIqxreNI9IvIpkX4pfZ7n3Zx%3DcdI9IvIpkafZH_7n3Zx%3DwViF2zfCfm4OINI94TiF2zfC2r4Zqk4Z2rfQqY4QHkfZLY7R4TJr3UjFkzfYIwJwEBCpdfBllZIwIDipNG49wTfD_3J%3Dv%2Fj9jG4QjcFcvnDQ7GJGwGF%3D3W1D4iIZ4fCZISEr4%2FI%3D3mIlETjlX%2F4lwCildrFww3CC7Efl7w2dv5Bm7ICFE8DZjWECe6FODY2nd2DGNOEQI8imEQBDj4HDcq2Qe%3DikXYHn3qxdlwfk2wfk2nxR3VxZkS1Y%2FM6QTS7nwvHZkufCTufCTufCTufCTufBIQxpkW5Qlm1CbTftWY1Cfm5pbTftWXfpbr5tWT5tXkiFXwxrbTHncQimIvJ%3DXKHmzUI9EQiGIw",
+				"sponsored_impression_url": "https://imp.mt48.net/static?id=7RHzfOIXjFEYsBdvIpkX4pxr1C2r4pxY4ZDa1pHd1C8nj9wWIBdvIpkY7n4YIFckiGIw5FwqgClW4C8m7ReTHF4wJFEUjtdvIpkXfpbr7ncq5G4wJ%3DEQj%3DwVJOdvIpkX4pxr1C2r4pxY1C8m4Q2Z1p8nxmXVjtdUjFdOIG8zfWyy",
+				"sponsored_tile_id": 75173,
+				"partner": "amp",
+				"favicon": "https://ads-img.mozilla.org/v1/images?image_data=CnAKbmh0dHBzOi8vYW1wLWFzc2V0LjQ1dHUxYzAuY29tL2Fzc2V0cy8xNDMzL2ZjYmI1OGQ1ODAwMmEwYmJkYmFiZmE3ZmM0MjYzMmYxNjZiZjlkYzEwMmQzMDU1MDNiMDU2ZTI3YWMxZjY4ODUuanBnEiA5fkM31kNXi7wM3-JY-xWR3mgAcTmItUfOpkzREEemXg",
+				"faviconSize": 200,
+				"typedBonus": true
+			},
+			{
+				"bookmarkGuid": null,
+				"frecency": 400,
+				"guid": "ySx-3Zvmmlrb",
+				"lastVisitDate": 1739217784125,
+				"title": "Content / 25W Linux Automation - 01",
+				"url": "https://gc.blackboard.com/ultra/courses/_391986_1/outline",
+				"type": "history",
+				"favicon": "data:image/png;base64,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",
+				"faviconLength": 4370,
+				"faviconRef": "",
+				"faviconSize": 64,
+				"smallFavicon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAQ2UlEQVR4Xt1aC7CVVRVe/z3n3HPhglAKBfkWM8EXKKClWZk1FSmKgCg+x1RGKhkNs3yNZvkow2wQFWUUEhDKB5iWMiqjQuQTxSlFylBGBR+IwD33vFqPvfZe+z/nXC5xaySc63n8Z+/zr9f3fWvtk+Sv/WEVkgpAUxUgwaf0nP/odQWSJnldxddN+Fete10+m15Pe1V5vdvL7JnD95vxdXOmDPyc/6r4vAx5fKTX/D5fx9e4F38m4x7xtVzXtfIY9qLntA/tp8/xEfej782QPXg9ablmEv6fDFMj0Gh/w8EAfY+dgtcr+NjkDJRrYX0wGNfjDdJ12p8cIg6Wz5JD+YaMA+iGyRGRA8hR+Bk2hAx2zlAHiIHyPl93+5ED8rifOEX3DPvT55L8zy/kDNCblEiGaFIE2VBjpDUCaBO6ho+SJfQYjKT3Q+bETqbPUYZl+MYB8oA3lzUOYEPxdUZuvjbCLgPoc/SHxtM+zU0lyCW4XyL7eQfw98QZljT/7CIpAWdgfQMqGHFXAq4kfJaw4WG9lpDPElcC9JmGJQTiQE1ZH63UDVsHaKrn0egsfo6ygK+zsyTNpWS24ID8lT9hB0iKhhqnm+U0dwbSNXs9jRFS/2G9LxnnAMYDlykhowh7QsnJHlLzZFCW0p5LhLChNsU19dN13+LKiNZ7B2gZGUyhdUnzFZdW9eYaGxCXSK0BcQZwRhDAOIywJSDfJZ+nfSrGARZ76DnXPd5wlqLq0pxqnKNN6W6xwL3nwVKdRiXAa8WpgjmyHzsgd9nl6IAYxRUQYwMUyRUPBBsqDuQCsIXrwi4a4dr1XC4uQyyIWsDNsqEGA9QBzgB2hEt/ZZXAKA5DLAg6FtBySnKXXBlhQJoGxYCYJjWCwYCQAQqiPuqmBCJ2UKbxDtAsk++rEi0D7osG0l5U554GbeSNA/IRq2DZMDCmaDDFMknu4qs5AzyQRTdcG6GIARyKK4Da9PaOYAyJaTKiWTTArldAFtAUGlaaJXxQgAw0GXQBY4XSKjnDYUCkA4wDmAazP77GY4BFac/b7JA4wuqEIHRq01xYQw1w61ls1dKsBkCAVjDCZpAtUVqfYcZw3M4pbYSUey2MIhiSpkHrxCQ7+ToWQqoFtlro4JfIzTrjIlSPMcBH1WOOXI/WU1aZ66QT0hqE9QYaSPqBlZ4vA1GSkh0CeswCDgRFJzgdQBhC35W78FfeAQH8TKQcmgc5HOhMQU4oMxZBXg/UMUAls9KsKtEaDZIuMd4rltzqCNEB4gCKuMpp7wBVgtYBXAKTpggGuMhZFcfSFReq/rdYwQxAqeoMtOkbIbpBeYsR2mMoC6Q1iO85tsgiTlZT1B0IBmdIhlgpLNI4SO0kc/5NPgO07iI9kKrbmqbHg2YsorwBKZr0gohTXTDCloC9HusE7R86plnCB6l9ZY7gAAHDuNdIsj+YWmVNbuo4LXTU6LSUDQZoWQQQi4VOx1I7MEu8PtYJgSa5kdLMrEOzdD2r2sE3W7XNEAuhzMRpXggp8isWCIqnukSf0g7Nt5iitRpBnSOKUWu6tlFiQE7RZAiWfL+WoNUYginiMMIAFUbSLcbNVtI0YTrTYA2XO8N9rTbgcjGgPpfbeYKfFRB6c/RwmQM5xZ0K8nwVO8LA+7YdDx0mrYtpNijZNM0yy1BZcEZgOWhn6agzaTr3Do8BYaBhouEcEXdz6mEBSfulMZ3agYiwRAmNLBXbUOWVZJ06sCmB5nwOnYP6z+kBLbH0vMHSpJXa9WjWZlAWv5v6CgZJdUDm7Du9FLY9gDpDJjqdFDoRv9tmiPYAKOM+vdDIwZ/tBz3yeahUMeK4fxaN/hid8vza1fBRcRNPaywL+M7UvB+346pBwkQr3Y6HLI3ZImk6a5YZiIQ0Cynr0NqUQCSHGeVlXeOBCBqJod24+SM4cfAhMOu4kzDSaLX5V6pU4LQHZ8DdLz0JPVtboVQteZoNGkTo2hojJRqEnKXskGHqGFyP/QXdL4EotctJcsZs0wwZdFVZyh+qD2TpGm40T2DQw9QrtrfB1JHHw1kHD4O2UhEpSZxQrFagJZOD2198GiY8dBfkW/KMBXSzWiIdsVRtN2vEUkrfiLIM15Om0+8xAxHb6ro0bFACvlxSIKh4YAciVNeFUgEG9u8Lc8eMgYF9+gJFPOscoM9fWfc2nPjADFix9i3o1pzFEikxC9mRXEfzhJhd6knzWppNklPn+27QKj3fFtcBuUgPmOv8fpSSFEHq0AA2fbwBvvflQ+HmY0agYaTjE8wsBAb8V8XXZfxrwtfnPTwfblm2CHr0aMXMKOP6wAqCRSFIfI91aLLzNIsOgfH3+hKIW90YxLQh8RHQyJgMiNDZ1SXVWgkN6ZnPwrRR34YTDxgE7SUcWmYykQOKZRpgZmHOiudhwoP3wMZyATJYNtEY3vQlHY3kIjXppHqEG7YEknEPoBKMu0HPAOzh+KzAbi48X0uDgU6xdcXoFwqbYPheu8DCM0fDjt27ccSbUiBYwZKgjFi3eSMcM3cGLH3jNejerQVRAMugAQCHdlzmkbb8Oje2pwwY+6DMA7whtYcYcYMUi45GByfSsoqDylj/E488GG4c+XVoL6IYId7Df7YEGAwrNALPwvkPL4Cblj4BOcQBQO5OzyNsPyJNXP15hbKAOifgiQFBGPNQNA+IZvoNIhxNdFQx+psQzSCdIqZ/pQh9e3eHe08fAV/c/XMCfoSKrvatI+gaYcOS1f+CE+6ZBW9/vB6aEUCq6ATFp6hPcUIqasej3oACUP9MQzM5gVGPCAY04FOd7toainS3q8t6R2DkgGKxHQ7fpz88PnEUol2CTgmRj4SAcwiXAqrCr95xOyz+x0poQeFEEtmWJbfeeL9bPU9gALXzBCoBcoDEwxxvyUGFOCaucRsBLR3PGL4O3Q1iBRMDXPXdofCjowZj9IkRmhgDKP03trfzN7c2N/v3CAyJHq978im4fNGjqB7LPPmh3qFG55vAbfU8wemDBE4gB+DueFNSmOkabzwQ0fm/0lOkyChC5RJ8eoc8LP/pKOjfq5W/gpiP9BiSINz38kp+feygAf49dc7bGzbCgb+dCms3bUB2QKelJk6eEqnZMa183XkCBzGeJ5gSeFQwgJOA3JxyRERzloOD0EiXh7bRlUoJjh2yK9x37tGgKE+RL1OtY5RHzVjIDpiP+KDvkQOUJY6bORfue+VvkMtJYOrRrB/bkw1ajjbNUzSttOqHPyEDXPRdNfiyaEBzPgJIk3aWF9EklsAfJnwFjj1oV45+E9Y2GUf/NhaLsMcVd3Jar7rsDOjRTFYKPpBQolDcv+JVGH33fDFe78Nhlf9Oj13KXrafERBMt/qR4IMTMAMUA7hJdx7gdzUjXArVA8qIhsLUhjzdr3czrLpmJORzSGeu7ktY4xT9uc+shNNmLeKo3Tn+KBg7ZG/OgiwKB3YSOqJQLMHnr58GazZ85MCz9vcJenZZ72wh6ITabtaP/YMDxA1cAt4R5nUaJDnN4qGpIjWhfxmbnQtG7Au/HDuYDdLaLpURCLGmx0xfBPOeeY2l7tihe8OcM74BxRI5QLKEMoH+Ji98DK5/bAk0NxMdhta8c0InPlhJ6wK+31oH2AxwWZDGiKjvj9tT1uE08UEH/PXqo2HIbp/yBkn6J7C+rR2G/eIBWPnOB/i6AgP694K/TD4OemMXSAEgw9UJz735Dgz/9V3Q1IxASN2h6wc8WJsMjIDSlIxMsONfuPjDmPoO0GxIZ0SoFilYM9FROY08X8Uu7pC9e8MTFx8B3bEHUGPaHcXNXLIKzpu9VGgQ92htycLN4w6Dk4dJGVCfoGs2tRfhqJvnw7I33oJMjpwgyjAaiHjxYyZVXoyJ0+r9xIfb+S07oF5pUJm49xl9HdBghLCfgdIG7Pu/PwTO/tpuCJDS7VFUi2UcRWUzcOr0p2Hm469CrpWkbgWKbW1wypH7wF1nHImNEs3tglZA6QDTl74E5858CLrt0IJaAucEVnV2oh1Xh0XDXg1Y5x2QdoTDCkublI74une3BJ686jAYuMsOnv4Y2dEJb72/GUbcuBiWv74Wsq2okvBGSoU2OHCvPrBg4lGwM8pm+iy1xkKHCbzy9gdwxJR5sL69wOVFZROO4kQlSgscg2RnxvZbkQH1yiLWDxm82fKmdjjpm/3htrMHcfqrMe0IcCRoZj71Bpw941mcCJV4SkTRof9a8gncduqhMH74npwFlCm6dmOhCOfMfRx+t2QF5FtznAW0btvH9g1B0Brb6LllCymJLBpY+rAAd19yEIw7vB/WM0VF1pcw/XNo1LkzXoBbFqC4QYpkQzBr8G0obtgM53xnX5h2ynDPBrROhyfznlsFY6YuhHyvPK7DibLOBhqUQPz7hA7G9ltfAmmHCLKToZX2MgzcoyfcP/lAGNCvu1d3ZDxlx6p3N8Po3zwDz/99HWS7Z3hQQgKHRtXFtgIM+cKOMG/C4bDHTq3sPOoaVSGufHc9jLz1z7BizVqmxDJNi1LdqhU42jc0OjhRXPgPSyDlBI5+AqX3CzDppAFww2kDiLBEYaNjisj9lP5zl6yB8VNegHLW1TFNaF1TQhHNoCaYNeFQGDN0VywDYgNuHFiWUAN9we+XwQ0Ln4EWzAKaHXQkdOr+PiGibxn0dI0DiLvxRlvwhmdfcAAcM3QnTGOKoChJHDkRbMHkWa/BlNmI/jvl0ClqgOAAdr1Q+GATTBo9CK4bu78IIQZYdCxTYxMsWL4axt36GBSQZvnUmigxpf8tRWo3Gw9t4n6mSxxA843yhnb40sF9YM75+0HfXtLeEpJTKlN//+a6Njj+hpdh+asf4q8zyS2h3dY5fRml72DUD/MnDoOddxQ2oNKp0B7oy3eRXk++fTEsfmk1NPckDDFYELXuYYxX73g/HOVvEwiGMqBIVQtluPbMfWDyyN3rouYjL74H37r0WUoTngBLbxzmDXSj/NtdFEd/vPRwOHr/vnX3uf5PK+CiOcsgi/tU6OzAzzPjQx0/H+xwZtlFDtBG/4DdesDufVqwiZGpjswY8MwP8eH1dzbDitexqckLvaE2dQ5wihKdQYemZewS99uzF+z5mW5QwDIhNKeIldHcbqgE//neBnhxjUjoAHCxHO/82L6rHMCKGY0q4I3g0JPzNSUb8GiWo4/WhybT1bgKGckIXFhAiYw6gRWmpTmqedwnaaG52raN7beiF+iEJnA9Pqm2tO26moPOxlvn1FGTFFkSiGbW6Kc3pPQ4FzTiUkL2CL/m4OR/UgKd8FFNSvD0SbmSMshMo7T19tF39Z2aR9Q2Y/EZhuiEUB52bujHd9suhLbaerMgpSZ1AFPTaIU5QFeN7fUXJF1Cg9viAlmrjkg91h3CuNpXUVPnYERnlDytdtfll+rCPPYI8BPigBRi8kRKGy2PItHZRf2BSOeP97sWBLc9BVI7KDgqRtQZ27u2OH3eH3r+xsf7NkM+gRnQUTZ0PLa343n7+4TwvpSAbaM/4Q5w+MAHN5YxmD7wLz65SneDenJlJ8fxwUlXCqEuL4P0hrXzB/8JHZEZmqyHEWE0Zk+H/bnAf92CLvoCwxT+SM9lgz8/dH1Gg7G9Pf7bDkqgnt+MglRl6foOOeQ1jVE0MQqR1xH6duoAiw2OLtkRljrjbtM7Jfr9wHaFAVuqoAYYkeoF4l7h/8oBRjCpkIpOu+N5QTge3+5AcEuZkJLW/NLqBzs7+L/MgHQmKF4EiLDzh+0YBDuTCTYbzHNzmvVvlyHCguNphygAAAAASUVORK5CYII=",
+				"smallFaviconLength": 4370,
+				"smallFaviconRef": "",
+				"smallFaviconSize": 64,
+				"hostname": "gc.blackboard",
+				"typedBonus": true,
+				"screenshot": "moz-page-thumb://thumbnails/?url=https%3A%2F%2Fgc.blackboard.com%2Fultra%2Fcourses%2F_391986_1%2Foutline&revision=5428"
+			},
+			{
+				"bookmarkGuid": null,
+				"frecency": 200,
+				"guid": "DOykYVE3G56s",
+				"lastVisitDate": 1737409023390,
+				"title": "Mozilla accounts",
+				"url": "https://accounts.firefox.com/settings?context=fx_desktop_v3&entrypoint=fxa_avatar_menu&uid=3948443a042147d48d8cd68b9a6da32c&email=i.navneetkaur032%40gmail.com",
+				"type": "history",
+				"favicon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAEHUlEQVRoQ+1YSSi1YRR+riEUMmTcKJShlNgohIViQWQqhEjZsTCWkoVkiA0LZVgow0KRjaIMKyQbhUyRjCUi8/T/z1v377r3vZPb7ff/fadu93bfc97vPOc55z3n/VQAPn9//llRKQD+MncKA3+ZACgMKAxYGAElhSwMoMXmCgMWh9DCDf4/BlQqFYKDg+Hp6YnPT/mc9/T0hK2tLby8vMDe3h5hYWGIiYlBYGAgHBwccHV1hY2NDayuruLs7EwaY19fX2ETEREBDw8PPD4+4uDgACsrK9je3sbr66tJ3OgwYGtri6GhIWRnZ0s34fre3h5SUlKE83V1dULX29sbBK8WOkCQvb29GB4eFg5SCDA/Px+VlZUIDw8Xe6iFAbu8vMTk5CQ6Ojqwv79vFIQUwNjYmHBKn+zu7qK8vBxNTU1ISkoy+JDn52d0dXWhubkZHx8faGhoQH19PZycnAzaLS8vo6ysDJubmwb1vgXg9PRURCc+Pt5ohKjw8PCA0tJSvL+/C3adnZ1NspuYmEBxcTHu7+/16ksBjI6OIicnR9SAZlpoUs3fXLu9vcX5+bn47ePjA1dXV+nD1tfXYWNjg8jISJGarA065ubmJuy4pi0EnpWVhZmZGdMB0JG4uDgEBATAxcUFjY2N8Pf319mA6cBc7e7u/pOroaGhIq0SEhJ09NXBYKG2tLRgfn5eAHB3dxdRrqqqkqZVZ2cnampqTAegqcnILCwsgI5py+LiIvLy8nBxcfFlKTo6GtPT0/Dz89Oxubu7Q1FRkQCuKY6Ojujv70dBQYGOzdTUlKjHt7c3KQiDfUAfAEaTRTwwMKCzKU+V8fFxZGZm6qzNzs4iIyND1IS2MGVHRkZgZ2f3ZWlubg5paWng0S2TbwG4ublBcnIy1tbWpJu2traKk0ZbeDTW1tZKbaKiokBnmVKaYhUALMDExETs7OxInaHzBKEt/L+trU1qExISAqYlWbc6AB6jBMB+IJPq6mrRiLSFTa+9vV0BoBmBb9WAwoAkiZQakFWWvj7w41PIy8tLtHV+sykFBQV9wcfuyy7MsYAzDLsk/1N3S32nEI9WjtccyTk2azYnfSm0tLSEwsJCcKrlSM5ubrCI6VBPTw/S09PFMEcWNGd2GnOq5ABHh6l/fHyM3NxcnJyciL31Abi+vhbDHx0pKSkRlxe16APAeYn78zns1BzLDQJgdIzdB7TT7ejoSAxw/DYEQG3HUSI1NRWMrjEAms/q6+tDRUWFAkCn3n8UA7wPMJ952ebMb0yoz9weHBwEhzxKbGysSBGZPfX5MoD35MPDwz/b807NezIvRLKXCUxtphwPFZM7sTHnf8L6//de6CdE1RwfFAbMiZY1dBUGrBFVc/ZUGDAnWtbQVRiwRlTN2VNhwJxoWUP3F7uurx9n2EXqAAAAAElFTkSuQmCC",
+				"faviconLength": 1110,
+				"faviconRef": "",
+				"faviconSize": 48,
+				"smallFavicon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABm0lEQVQ4T92Tv6sxUByHH6GwyXCRDPwFZDH4EYOS7XYpihSLH6PNcOtuWE2kdA1IDCiu4aakjBYLg9lCJJbbfV9H73uH953u9r7fOnVO59PzPefpHAnw+XN8uyT/CcBgMODz+ZDJZGw2Gz4+PnC5XOx2O3q9nvDz+PiIRqNhOp0ym81E5lbCgdvtptvtolar2W63nM9n9Hq9WA+HQy6XC3a7nYeHB/b7PZFIhMlk8gVQKpWk02mKxSLr9ZpYLIZCoaDRaKDT6Xh5eaFWq5HP50kkEpRKJXK53BfgNgsGg7RaLTqdDqFQCJVKxdvbGxaLBa/Xy3w+Jx6PC1C5XCaTyfwd0Gw2CYfD3E41Ho+xWq14PB4WiwXRaJR6vf4nQC6Xk0wmxUa/3yeVSnE8HsX9bTYbT09PDAaD34AbJJvNcjqd7hIdDgftdhutVsv1emW5XIpwpVLB6XSyWq3w+/3ccq+vr0Lq8/MzhULhDjCbzcKsVCpFIpFwOBxEMBAIYDKZRKdqtYrRaBSubrn393dGo9Ed8O2P8Osd/NuAHyMUsgHs4NZPAAAAAElFTkSuQmCC",
+				"smallFaviconLength": 468,
+				"smallFaviconRef": "",
+				"smallFaviconSize": 16,
+				"hostname": "accounts.firefox",
+				"typedBonus": true,
+				"screenshot": "moz-page-thumb://thumbnails/?url=https%3A%2F%2Faccounts.firefox.com%2Fsettings%3Fcontext%3Dfx_desktop_v3%26entrypoint%3Dfxa_avatar_menu%26uid%3D3948443a042147d48d8cd68b9a6da32c%26email%3Di.navneetkaur032%2540gmail.com&revision=4457"
+			},
+			{
+				"bookmarkGuid": null,
+				"frecency": 125,
+				"guid": "t3oOt8jLWw_p",
+				"lastVisitDate": 1739217435469,
+				"title": "Georgian College SharePoint Online Root Site - Blackboard",
+				"url": "https://georgiancollege.sharepoint.com/SitePages/blackboard.aspx",
+				"type": "history",
+				"hostname": "georgiancollege.sharepoint",
+				"typedBonus": true,
+				"screenshot": "moz-page-thumb://thumbnails/?url=https%3A%2F%2Fgeorgiancollege.sharepoint.com%2FSitePages%2Fblackboard.aspx&revision=3709"
+			},
+			{
+				"isDefault": true,
+				"url": "https://www.youtube.com/",
+				"hostname": "youtube",
+				"sendAttributionRequest": false,
+				"label": "YouTube",
+				"tippyTopIcon": "chrome://activity-stream/content/data/content/tippytop/images/youtube-com@2x.png",
+				"smallFavicon": "chrome://activity-stream/content/data/content/tippytop/favicons/youtube-com.png",
+				"typedBonus": true
+			},
+			{
+				"isDefault": true,
+				"url": "https://www.facebook.com/",
+				"hostname": "facebook",
+				"sendAttributionRequest": false,
+				"label": "Facebook",
+				"tippyTopIcon": "chrome://activity-stream/content/data/content/tippytop/images/facebook-com@2x.png",
+				"smallFavicon": "chrome://activity-stream/content/data/content/tippytop/favicons/facebook-com.ico",
+				"typedBonus": true
+			}
+		],
+		"editForm": null,
+		"showSearchShortcutsForm": false,
+		"searchShortcuts": [
+			{
+				"keyword": "@google",
+				"shortURL": "google",
+				"url": "https://google.com",
+				"tippyTopIcon": "chrome://activity-stream/content/data/content/tippytop/images/google-com@2x.png",
+				"smallFavicon": "chrome://activity-stream/content/data/content/tippytop/favicons/google-com.ico"
+			},
+			{
+				"keyword": "@bing",
+				"shortURL": "bing",
+				"url": "https://bing.com",
+				"tippyTopIcon": "chrome://activity-stream/content/data/content/tippytop/images/bing-com@2x.svg",
+				"smallFavicon": "chrome://activity-stream/content/data/content/tippytop/favicons/bing-com.ico"
+			},
+			{
+				"keyword": "@duckduckgo",
+				"shortURL": "duckduckgo",
+				"url": "https://duckduckgo.com",
+				"tippyTopIcon": "chrome://activity-stream/content/data/content/tippytop/images/duckduckgo-com@2x.svg",
+				"smallFavicon": "chrome://activity-stream/content/data/content/tippytop/favicons/duckduckgo-com.ico"
+			},
+			{
+				"keyword": "@ebay",
+				"shortURL": "ebay",
+				"url": "https://ebay.com",
+				"tippyTopIcon": "chrome://activity-stream/content/data/content/tippytop/images/ebay@2x.png",
+				"smallFavicon": "chrome://activity-stream/content/data/content/tippytop/favicons/ebay.ico"
+			},
+			{
+				"keyword": "@wikipedia",
+				"shortURL": "wikipedia",
+				"url": "https://wikipedia.org",
+				"tippyTopIcon": "chrome://activity-stream/content/data/content/tippytop/images/wikipedia-org@2x.png",
+				"smallFavicon": "chrome://activity-stream/content/data/content/tippytop/favicons/wikipedia-org.ico"
+			}
+		],
+		"sov": {
+			"ready": true,
+			"positions": [
+				{
+					"position": 1,
+					"assignedPartner": "amp"
+				},
+				{
+					"position": 2,
+					"assignedPartner": "amp"
+				},
+				{
+					"position": 3,
+					"assignedPartner": "amp"
+				}
+			]
+		},
+		"pref": {
+			"collapsed": false
+		}
+	},
+	"App": {
+		"initialized": true,
+		"locale": "en-US",
+		"isForStartupCache": true,
+		"customizeMenuVisible": false,
+		"links": [
+			{
+				"isDefault": true,
+				"url": "https://www.amazon.ca/?tag=admpdesktopca-20&ref=pd_sl_9b1ed29b25abe07df5a4e450e4107fbf32e6c6569c0c79663c326746&mfadid=adm",
+				"hostname": "amazon",
+				"sendAttributionRequest": false,
+				"label": "Amazon",
+				"show_sponsored_label": true,
+				"sponsored_position": 1,
+				"sponsored_click_url": "https://bridge.lga1.admarketplace.net/ctp?version=1.0.0&encp=jnEYxmwVJQkX5QbUftINI%3DwqgClnxGEkgClrfZqZfp2YfCfm4CbnHnwqI%3DEYD%3DcYHFdZgF49DnIQfRNnCdj7scvGDGwgEkw_Cwj%3DiEvD2C4i3dqXFE3BJl_lEGjiEccaCD3qJEwuFGv4JEDYFGvIfD_SJ%3Dv43kkZCd3IfqkYCGv4iwqZCq3I7ReOgClWftaW7REkiCkm7RERiCkY7ndZj9eKiF3agCbnirjvIpkZ4Cxk4pbm4pqnxGEwxRwvIpkX4pxr1C2r4pxY4ZDa1pHd1C8nJG4kjpkW7R7kHnWzIncTxmDnx93kiF2zftIqx%3D4vIpkW7ncWfZd1sCeaCc37jl__f9w43%3D4kCFqWsDdpf9NfElEkCc34fDdl2CEHsnfXCD3ojYIQj9wvIpkZ7n4YIFwqgCLX1plnx%3DXvIpkXfpbr7n3Zx%3D7vIpkXfpl_7n3Zx%3DcqjnwqgClWfpqnI94WHGEqjnwqgCHm1pqnI94WiFzvIpkX4pLY7ncqxmXvIpkX4pxr1C2r4pxY1C8m4Qf_1pLnxmXVj%3D_dJCkX7nEUEE7fgDX82C4nEw3%2F1cxmJRc5EqXZID_3j9vki94TjZclIQ7YFRNEsl4iIw7GCZc91%3DaW1l4v2Rc%3DDre47C7%3DEmNDJmzvfndnJ9Hm2qjGDrevJp7S2qv8EDv%3DIYDY3R36CELmsR2W4lIoDq_rEmXFJm_qJp3w3rcE3nznfrE8JRc_4cwZim3%3DCwc14%3DkkHRj%2FFEqW4cIPCdEH4l4lCZ7NjEIcsc8W2mIc4dE7jq_Ufk7oImAwfqIoDnz2xpIuxC3g2GwP4kXifrEmiYIYj%3DzZgB%2FM6QTS1Y%2FniFwQgBkX1YkX1YkX1YkX1YkX7n4WgCbU4p8XftWW5plWfZbTftWW5plWfpxT5tWT593vJ%3DEZxtXOHF4oInwTJczQJm_qjF4vjnDy",
+				"sponsored_impression_url": "https://imp.mt48.net/static?id=7RHzfOIXjFEYsBdvIpkX4pxr1C2r4pxY4ZDa1pHd1C8nj9wWIBdvIpkY7n4YIFckiGIw5FwqgCLX1plnx%3DXNHmEuIF%2Bk5FwqgClWfpxnHF2uxmETIF4kiFzU5FwqgClk4Zx%2B4pxk4Z8%2BfQHmfZqa1tIZJ%3Dzk5F%2BdJF7wxQkX",
+				"sponsored_tile_id": 74357,
+				"partner": "amp",
+				"favicon": "https://ads-img.mozilla.org/v1/images?image_data=Cj0KO2h0dHBzOi8vYW1wLWFzc2V0LjQ1dHUxYzAuY29tL2Fzc2V0cy8xMDA5LzE1MjEyMjgwODcxNzYuanBnEiAV36GGy4uG4Kc3hcPXsQNe08loM62OgGAgcMju8zD3jQ",
+				"faviconSize": 200,
+				"typedBonus": true
+			},
+			{
+				"isDefault": true,
+				"url": "https://temuaffiliateprogram.pxf.io/Jz52V7?subId1=147794747275886592&mfadid=adm",
+				"hostname": "temuaffiliateprogram.pxf",
+				"sendAttributionRequest": false,
+				"label": "Temu",
+				"show_sponsored_label": true,
+				"sponsored_position": 2,
+				"sponsored_click_url": "https://bridge.lga1.admarketplace.net/ctp?version=1.0.0&encp=jnEYxmwVJQkX5QbUftINI%3DwqgC8nxGEkgClrfZqZfp2YfCfm4CbnHnwqI%3DEYD%3DcYHFdZgDdDDC41snTWCRv3fkdSHZcg3%3DxYCw3osBIWHQkXfpbUftIdj%3Dqz4OIdImqzfOIuxr3WGmwqspkW7nuriF2zfZDa1pxYfZ2r7RcdIG7_iF2zfC2r4Zqk4Z2rfQxd1pLm4CqY7ndZj92zftIYj%3D7TgFINJ94w7Rekj%3DwqgCbnI9eQiF2zftIQj9wvIpkZ7n4YIFwqgClW4plr7ReTiF2zfCbW4YIqxreOiF2zfC2rftIqxreNI9IvIpkX4pfX7n3Zx%3DcdI9IvIpkafQDk7n3Zx%3DwViF2zfCfkfYINI94TiF2zfC2r4Zqk4Z2rfQqY4QHkfZbd7R4TJr3UjFkzfOIwJwEBCpdfBllZIwIDipNG4wqdjF4ojtDY2nN_4C3u2qXGfF4lCDjSiq3cEDcNsGIY2dE6iFxZxnkWsC44iE7nHnjEfw4djn_93mzOxnN8JrveDdjgjc7uicxwfq8WEcEdHFNYE9eHFqImFEc8BwEl4mues%3Djr3D_axkka4E3UjrxYFq4eiZN94l2nxR3VxZkS1Y%2FM6QTS7nwvHZkufCTufCTufCTufCTufBIQxpkW5Qlm4CbTftWY1pLr5pbTftWXfpbr5tWT5tXkiFXwxrbTHncQimIvJ%3DXKHmzUI9EQiGIw",
+				"sponsored_impression_url": "https://imp.mt48.net/static?id=7RHzfOIXjFEYsBdvIpkX4pxr1C2r4pxY4ZDa1pHd1C8nj9wWIBdvIpkY7n4YIFckiGIw5FwqgClW4plr7ReTHF4wJFEUjtdvIpkXfpbr7ncq5G4wJ%3DEQj%3DwVJOdvIpkX4pxr1C2r4pxY1C8m4Q2ZfpDnxmXVjtdUjFdOIG8zfLyy",
+				"sponsored_tile_id": 75169,
+				"partner": "amp",
+				"favicon": "https://ads-img.mozilla.org/v1/images?image_data=CnAKbmh0dHBzOi8vYW1wLWFzc2V0LjQ1dHUxYzAuY29tL2Fzc2V0cy8xNDMxL2UxYjMxOGJkNDkzNDYyN2Q3MjZkNTFmOWM1ZDQyNTVjZWFhNjI0MWRkYmY4M2RmMDE5MGUyMjBiN2E4MWUyODUuanBnEiCF1FoJ1nRR2YvYgV1umBhTKA482BKOK56b6gVGpg0XUQ",
+				"faviconSize": 200,
+				"typedBonus": true
+			},
+			{
+				"isDefault": true,
+				"url": "https://hotels.prf.hn/l/jXnvxoO/pubref:147794747275886592?mfadid=adm",
+				"hostname": "hotels.prf",
+				"sendAttributionRequest": false,
+				"label": "Hotels.com",
+				"show_sponsored_label": true,
+				"sponsored_position": 3,
+				"sponsored_click_url": "https://bridge.lga1.admarketplace.net/ctp?version=1.0.0&encp=jnEYxmwVJQkX5QbUftINI%3DwqgCfnxGEkgClrfZqZfp2YfCfm4CbnHnwqI%3DEYD%3DcYHFdZgDdDDC41snTWCRv3fkdSHZcg3%3DxYCw3osBIWHQkXfpbUftIdj%3Dqz4OIdImqzfOIuxr3WGmwqspkW7nuriF2zfZDa1pLmfpqk7RcdIG7_iF2zfC2r4Zqk4Z2rfQxd1pLm4CqY7ndZj92zftIYj%3D7TgFINJ94w7Rekj%3DwqgCbnI9eQiF2zftIQj9wvIpkZ7n4YIFwqgClW4C8m7ReTiF2zfCbW4YIqxreOiF2zfC2rfYIqxreNI9IvIpkX4pfZ7n3Zx%3DcdI9IvIpkafZH_7n3Zx%3DwViF2zfCfm4OINI94TiF2zfC2r4Zqk4Z2rfQqY4QHkfZLY7R4TJr3UjFkzfYIwJwEBCpdfBllZIwIDipNG49wTfD_3J%3Dv%2Fj9jG4QjcFcvnDQ7GJGwGF%3D3W1D4iIZ4fCZISEr4%2FI%3D3mIlETjlX%2F4lwCildrFww3CC7Efl7w2dv5Bm7ICFE8DZjWECe6FODY2nd2DGNOEQI8imEQBDj4HDcq2Qe%3DikXYHn3qxdlwfk2wfk2nxR3VxZkS1Y%2FM6QTS7nwvHZkufCTufCTufCTufCTufBIQxpkW5Qlm1CbTftWY1Cfm5pbTftWXfpbr5tWT5tXkiFXwxrbTHncQimIvJ%3DXKHmzUI9EQiGIw",
+				"sponsored_impression_url": "https://imp.mt48.net/static?id=7RHzfOIXjFEYsBdvIpkX4pxr1C2r4pxY4ZDa1pHd1C8nj9wWIBdvIpkY7n4YIFckiGIw5FwqgClW4C8m7ReTHF4wJFEUjtdvIpkXfpbr7ncq5G4wJ%3DEQj%3DwVJOdvIpkX4pxr1C2r4pxY1C8m4Q2Z1p8nxmXVjtdUjFdOIG8zfWyy",
+				"sponsored_tile_id": 75173,
+				"partner": "amp",
+				"favicon": "https://ads-img.mozilla.org/v1/images?image_data=CnAKbmh0dHBzOi8vYW1wLWFzc2V0LjQ1dHUxYzAuY29tL2Fzc2V0cy8xNDMzL2ZjYmI1OGQ1ODAwMmEwYmJkYmFiZmE3ZmM0MjYzMmYxNjZiZjlkYzEwMmQzMDU1MDNiMDU2ZTI3YWMxZjY4ODUuanBnEiA5fkM31kNXi7wM3-JY-xWR3mgAcTmItUfOpkzREEemXg",
+				"faviconSize": 200,
+				"typedBonus": true
+			},
+			{
+				"bookmarkGuid": null,
+				"frecency": 400,
+				"guid": "ySx-3Zvmmlrb",
+				"lastVisitDate": 1739217784125,
+				"title": "Content / 25W Linux Automation - 01",
+				"url": "https://gc.blackboard.com/ultra/courses/_391986_1/outline",
+				"type": "history",
+				"favicon": "data:image/png;base64,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",
+				"faviconLength": 4370,
+				"faviconRef": "",
+				"faviconSize": 64,
+				"smallFavicon": "data:image/png;base64,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",
+				"smallFaviconLength": 4370,
+				"smallFaviconRef": "",
+				"smallFaviconSize": 64,
+				"hostname": "gc.blackboard",
+				"typedBonus": true
+			},
+			{
+				"bookmarkGuid": null,
+				"frecency": 200,
+				"guid": "DOykYVE3G56s",
+				"lastVisitDate": 1737409023390,
+				"title": "Mozilla accounts",
+				"url": "https://accounts.firefox.com/settings?context=fx_desktop_v3&entrypoint=fxa_avatar_menu&uid=3948443a042147d48d8cd68b9a6da32c&email=i.navneetkaur032%40gmail.com",
+				"type": "history",
+				"favicon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAEHUlEQVRoQ+1YSSi1YRR+riEUMmTcKJShlNgohIViQWQqhEjZsTCWkoVkiA0LZVgow0KRjaIMKyQbhUyRjCUi8/T/z1v377r3vZPb7ff/fadu93bfc97vPOc55z3n/VQAPn9//llRKQD+MncKA3+ZACgMKAxYGAElhSwMoMXmCgMWh9DCDf4/BlQqFYKDg+Hp6YnPT/mc9/T0hK2tLby8vMDe3h5hYWGIiYlBYGAgHBwccHV1hY2NDayuruLs7EwaY19fX2ETEREBDw8PPD4+4uDgACsrK9je3sbr66tJ3OgwYGtri6GhIWRnZ0s34fre3h5SUlKE83V1dULX29sbBK8WOkCQvb29GB4eFg5SCDA/Px+VlZUIDw8Xe6iFAbu8vMTk5CQ6Ojqwv79vFIQUwNjYmHBKn+zu7qK8vBxNTU1ISkoy+JDn52d0dXWhubkZHx8faGhoQH19PZycnAzaLS8vo6ysDJubmwb1vgXg9PRURCc+Pt5ohKjw8PCA0tJSvL+/C3adnZ1NspuYmEBxcTHu7+/16ksBjI6OIicnR9SAZlpoUs3fXLu9vcX5+bn47ePjA1dXV+nD1tfXYWNjg8jISJGarA065ubmJuy4pi0EnpWVhZmZGdMB0JG4uDgEBATAxcUFjY2N8Pf319mA6cBc7e7u/pOroaGhIq0SEhJ09NXBYKG2tLRgfn5eAHB3dxdRrqqqkqZVZ2cnampqTAegqcnILCwsgI5py+LiIvLy8nBxcfFlKTo6GtPT0/Dz89Oxubu7Q1FRkQCuKY6Ojujv70dBQYGOzdTUlKjHt7c3KQiDfUAfAEaTRTwwMKCzKU+V8fFxZGZm6qzNzs4iIyND1IS2MGVHRkZgZ2f3ZWlubg5paWng0S2TbwG4ublBcnIy1tbWpJu2traKk0ZbeDTW1tZKbaKiokBnmVKaYhUALMDExETs7OxInaHzBKEt/L+trU1qExISAqYlWbc6AB6jBMB+IJPq6mrRiLSFTa+9vV0BoBmBb9WAwoAkiZQakFWWvj7w41PIy8tLtHV+sykFBQV9wcfuyy7MsYAzDLsk/1N3S32nEI9WjtccyTk2azYnfSm0tLSEwsJCcKrlSM5ubrCI6VBPTw/S09PFMEcWNGd2GnOq5ABHh6l/fHyM3NxcnJyciL31Abi+vhbDHx0pKSkRlxe16APAeYn78zns1BzLDQJgdIzdB7TT7ejoSAxw/DYEQG3HUSI1NRWMrjEAms/q6+tDRUWFAkCn3n8UA7wPMJ952ebMb0yoz9weHBwEhzxKbGysSBGZPfX5MoD35MPDwz/b807NezIvRLKXCUxtphwPFZM7sTHnf8L6//de6CdE1RwfFAbMiZY1dBUGrBFVc/ZUGDAnWtbQVRiwRlTN2VNhwJxoWUP3F7uurx9n2EXqAAAAAElFTkSuQmCC",
+				"faviconLength": 1110,
+				"faviconRef": "",
+				"faviconSize": 48,
+				"smallFavicon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABm0lEQVQ4T92Tv6sxUByHH6GwyXCRDPwFZDH4EYOS7XYpihSLH6PNcOtuWE2kdA1IDCiu4aakjBYLg9lCJJbbfV9H73uH953u9r7fOnVO59PzPefpHAnw+XN8uyT/CcBgMODz+ZDJZGw2Gz4+PnC5XOx2O3q9nvDz+PiIRqNhOp0ym81E5lbCgdvtptvtolar2W63nM9n9Hq9WA+HQy6XC3a7nYeHB/b7PZFIhMlk8gVQKpWk02mKxSLr9ZpYLIZCoaDRaKDT6Xh5eaFWq5HP50kkEpRKJXK53BfgNgsGg7RaLTqdDqFQCJVKxdvbGxaLBa/Xy3w+Jx6PC1C5XCaTyfwd0Gw2CYfD3E41Ho+xWq14PB4WiwXRaJR6vf4nQC6Xk0wmxUa/3yeVSnE8HsX9bTYbT09PDAaD34AbJJvNcjqd7hIdDgftdhutVsv1emW5XIpwpVLB6XSyWq3w+/3ccq+vr0Lq8/MzhULhDjCbzcKsVCpFIpFwOBxEMBAIYDKZRKdqtYrRaBSubrn393dGo9Ed8O2P8Osd/NuAHyMUsgHs4NZPAAAAAElFTkSuQmCC",
+				"smallFaviconLength": 468,
+				"smallFaviconRef": "",
+				"smallFaviconSize": 16,
+				"hostname": "accounts.firefox",
+				"typedBonus": true
+			},
+			{
+				"bookmarkGuid": null,
+				"frecency": 125,
+				"guid": "t3oOt8jLWw_p",
+				"lastVisitDate": 1739217435469,
+				"title": "Georgian College SharePoint Online Root Site - Blackboard",
+				"url": "https://georgiancollege.sharepoint.com/SitePages/blackboard.aspx",
+				"type": "history",
+				"hostname": "georgiancollege.sharepoint",
+				"typedBonus": true
+			},
+			{
+				"isDefault": true,
+				"url": "https://www.youtube.com/",
+				"hostname": "youtube",
+				"sendAttributionRequest": false,
+				"label": "YouTube",
+				"tippyTopIcon": "chrome://activity-stream/content/data/content/tippytop/images/youtube-com@2x.png",
+				"smallFavicon": "chrome://activity-stream/content/data/content/tippytop/favicons/youtube-com.png",
+				"typedBonus": true
+			},
+			{
+				"isDefault": true,
+				"url": "https://www.facebook.com/",
+				"hostname": "facebook",
+				"sendAttributionRequest": false,
+				"label": "Facebook",
+				"tippyTopIcon": "chrome://activity-stream/content/data/content/tippytop/images/facebook-com@2x.png",
+				"smallFavicon": "chrome://activity-stream/content/data/content/tippytop/favicons/facebook-com.ico",
+				"typedBonus": true
+			}
+		],
+		"pref": {
+			"collapsed": false
+		}
+	},
+	"Prefs": {
+		"initialized": true,
+		"values": {
+			"default.sites": "https://www.youtube.com/,https://www.facebook.com/,https://www.reddit.com/,https://www.wikipedia.org/,https://www.amazon.ca/,https://twitter.com/",
+			"feeds.section.topstories.options": "{\"api_key_pref\":\"extensions.pocket.oAuthConsumerKey\",\"hidden\":false,\"provider_icon\":\"chrome://global/skin/icons/pocket.svg\",\"provider_name\":\"Pocket\",\"read_more_endpoint\":\"https://getpocket.com/explore/trending?src=fx_new_tab\",\"stories_endpoint\":\"https://getpocket.cdn.mozilla.net/v3/firefox/global-recs?version=3&consumer_key=$apiKey&locale_lang=en-US&feed_variant=default_spocs_on\",\"stories_referrer\":\"https://getpocket.com/recommendations\",\"topics_endpoint\":\"https://getpocket.cdn.mozilla.net/v3/firefox/trending-topics?version=2&consumer_key=$apiKey&locale_lang=en-US\",\"show_spocs\":true}",
+			"feeds.topsites": true,
+			"hideTopSitesTitle": false,
+			"showSponsored": true,
+			"system.showSponsored": true,
+			"showSponsoredTopSites": true,
+			"system.showWeather": false,
+			"showWeather": true,
+			"weather.query": "",
+			"weather.locationSearchEnabled": true,
+			"weather.temperatureUnits": "f",
+			"weather.display": "simple",
+			"pocketCta": "{\"cta_button\":\"\",\"cta_text\":\"\",\"cta_url\":\"\",\"use_cta\":false}",
+			"showSearch": true,
+			"topSitesRows": 1,
+			"telemetry": true,
+			"telemetry.ut.events": false,
+			"telemetry.structuredIngestion.endpoint": "https://incoming.telemetry.mozilla.org/submit",
+			"section.highlights.includeVisited": true,
+			"section.highlights.includeBookmarks": true,
+			"section.highlights.includePocket": true,
+			"section.highlights.includeDownloads": true,
+			"section.highlights.rows": 1,
+			"section.topstories.rows": 1,
+			"sectionOrder": "topsites,topstories,highlights",
+			"newtabWallpapers.enabled": false,
+			"newtabWallpapers.v2.enabled": false,
+			"newtabWallpapers.highlightEnabled": false,
+			"newtabWallpapers.highlightDismissed": false,
+			"newtabWallpapers.highlightSeenCounter": 0,
+			"newtabWallpapers.highlightHeaderText": "",
+			"newtabWallpapers.highlightContentText": "",
+			"newtabWallpapers.highlightCtaText": "",
+			"newtabWallpapers.wallpaper-light": "",
+			"newtabWallpapers.wallpaper-dark": "",
+			"newtabWallpapers.wallpaper": "",
+			"improvesearch.noDefaultSearchTile": true,
+			"improvesearch.topSiteSearchShortcuts.searchEngines": "google",
+			"improvesearch.topSiteSearchShortcuts.havePinned": "",
+			"asrouter.devtoolsEnabled": false,
+			"discoverystream.flight.blocks": "{}",
+			"discoverystream.config": "{\"api_key_pref\":\"extensions.pocket.oAuthConsumerKey\",\"collapsible\":true,\"enabled\":true}",
+			"discoverystream.endpoints": "https://getpocket.cdn.mozilla.net/,https://firefox-api-proxy.cdn.mozilla.net/,https://spocs.getpocket.com/,https://merino.services.mozilla.com/",
+			"discoverystream.isCollectionDismissible": true,
+			"discoverystream.onboardingExperience.dismissed": false,
+			"discoverystream.thumbsUpDown.enabled": false,
+			"discoverystream.thumbsUpDown.searchTopsitesCompact": false,
+			"discoverystream.region-basic-layout": false,
+			"discoverystream.spoc.impressions": "{}",
+			"discoverystream.endpointSpocsClear": "https://spocs.getpocket.com/user",
+			"discoverystream.rec.impressions": "{}",
+			"discoverystream.topicSelection.enabled": false,
+			"showRecentSaves": true,
+			"feeds.aboutpreferences": true,
+			"feeds.newtabinit": true,
+			"feeds.places": true,
+			"feeds.prefs": true,
+			"feeds.sections": true,
+			"feeds.section.highlights": false,
+			"feeds.system.topstories": true,
+			"feeds.systemtick": true,
+			"feeds.telemetry": true,
+			"feeds.favicon": true,
+			"feeds.system.topsites": true,
+			"feeds.recommendationprovider": true,
+			"feeds.discoverystreamfeed": true,
+			"feeds.wallpaperfeed": true,
+			"feeds.weatherfeed": true,
+			"isPrivateBrowsingEnabled": true,
+			"platform": "linux",
+			"region": "CA",
+			"fxa_endpoint": "https://accounts.firefox.com/",
+			"appUpdateChannel": "release",
+			"improvesearch.topSiteSearchShortcuts": true,
+			"mayHaveSponsoredTopSites": true,
+			"improvesearch.handoffToAwesomebar": true,
+			"featureConfig": {
+				"customizationMenuEnabled": null,
+				"topSitesContileEnabled": true
+			},
+			"pocketConfig": {
+				"spocPositions": "1,5,7,11,18,20",
+				"spocTopsitesPositions": "2",
+				"contileTopsitesPositions": "0,1,2",
+				"spocAdTypes": "",
+				"spocZoneIds": "",
+				"spocTopsitesAdTypes": "",
+				"spocTopsitesZoneIds": "",
+				"spocTopsitesPlacementEnabled": true,
+				"spocSiteId": "",
+				"widgetPositions": "",
+				"hybridLayout": false,
+				"hideCardBackground": false,
+				"fourCardLayout": false,
+				"newFooterSection": false,
+				"saveToPocketCard": true,
+				"saveToPocketCardRegions": "",
+				"hideDescriptions": false,
+				"hideDescriptionsRegions": "",
+				"compactGrid": false,
+				"compactImages": false,
+				"imageGradient": false,
+				"titleLines": 3,
+				"descLines": 3,
+				"onboardingExperience": false,
+				"essentialReadsHeader": false,
+				"editorsPicksHeader": false,
+				"recentSavesEnabled": false,
+				"readTime": true,
+				"newSponsoredLabel": false,
+				"sendToPocket": true,
+				"recsPersonalized": false,
+				"spocsPersonalized": true,
+				"topicSelectionEnabled": false,
+				"spocsCacheTimeout": null,
+				"ctaButtonSponsors": "",
+				"ctaButtonVariant": "",
+				"spocMessageVariant": "",
+				"regionStoriesConfig": "US,DE,CA,GB,IE,CH,AT,BE,IN,FR,IT,ES",
+				"regionBffConfig": "US,DE,CA,GB,IE,CH,AT,BE,IN,FR,IT,ES",
+				"merinoProviderEnabled": false,
+				"merinoProviderEndpoint": "merino.services.mozilla.com",
+				"regionStoriesBlock": "",
+				"localeListConfig": "",
+				"regionSpocsConfig": "US,CA,DE,GB,FR,IT,ES",
+				"regionWeatherConfig": "",
+				"localeWeatherConfig": "en-US,en-GB,en-CA",
+				"topSitesContileSovEnabled": true,
+				"pocketFeedParameters": ""
+			},
+			"logowordmark.alwaysVisible": true,
+			"feeds.section.topstories": true,
+			"discoverystream.enabled": true,
+			"discoverystream.sponsored-collections.enabled": false,
+			"discoverystream.hardcoded-basic-layout": false,
+			"discoverystream.personalization.enabled": true,
+			"discoverystream.personalization.override": false,
+			"discoverystream.personalization.modelKeys": "nb_model_arts_and_entertainment, nb_model_autos_and_vehicles, nb_model_beauty_and_fitness, nb_model_blogging_resources_and_services, nb_model_books_and_literature, nb_model_business_and_industrial, nb_model_computers_and_electronics, nb_model_finance, nb_model_food_and_drink, nb_model_games, nb_model_health, nb_model_hobbies_and_leisure, nb_model_home_and_garden, nb_model_internet_and_telecom, nb_model_jobs_and_education, nb_model_law_and_government, nb_model_online_communities, nb_model_people_and_society, nb_model_pets_and_animals, nb_model_real_estate, nb_model_reference, nb_model_science, nb_model_shopping, nb_model_sports, nb_model_travel",
+			"discoverystream.spocs-endpoint": "",
+			"discoverystream.spocs-endpoint-query": "",
+			"newNewtabExperience.colors": "#0090ED,#FF4F5F,#2AC3A2,#FF7139,#A172FF,#FFA437,#FF2A8A"
+		}
+	},
+	"Dialog": {
+		"visible": false,
+		"data": {}
+	},
+	"Sections": [
+		{
+			"title": {
+				"id": "newtab-section-header-stories"
+			},
+			"rows": [],
+			"enabled": true,
+			"id": "topstories",
+			"pref": {
+				"titleString": {
+					"id": "home-prefs-recommended-by-header-generic"
+				},
+				"descString": {
+					"id": "home-prefs-recommended-by-description-generic"
+				},
+				"nestedPrefs": [
+					{
+						"name": "showSponsored",
+						"titleString": "home-prefs-recommended-by-option-sponsored-stories",
+						"icon": "icon-info",
+						"eventSource": "POCKET_SPOCS"
+					}
+				],
+				"learnMore": {
+					"link": {
+						"href": "https://getpocket.com/firefox/new_tab_learn_more",
+						"id": "home-prefs-recommended-by-learn-more"
+					}
+				},
+				"collapsed": false,
+				"feed": "feeds.section.topstories"
+			},
+			"shouldHidePref": false,
+			"eventSource": "TOP_STORIES",
+			"icon": "chrome://global/skin/icons/pocket.svg",
+			"learnMore": {
+				"link": {
+					"href": "https://getpocket.com/firefox/new_tab_learn_more",
+					"message": {
+						"id": "newtab-pocket-learn-more"
+					}
+				}
+			},
+			"compactCards": false,
+			"rowsPref": "section.topstories.rows",
+			"maxRows": 4,
+			"availableLinkMenuOptions": [
+				"CheckBookmarkOrArchive",
+				"CheckSavedToPocket",
+				"Separator",
+				"OpenInNewWindow",
+				"OpenInPrivateWindow",
+				"Separator",
+				"BlockUrl"
+			],
+			"emptyState": {
+				"message": {
+					"id": "newtab-empty-section-topstories-generic"
+				},
+				"icon": "check"
+			},
+			"shouldSendImpressionStats": true,
+			"dedupeFrom": [
+				"highlights"
+			],
+			"options": {
+				"api_key_pref": "extensions.pocket.oAuthConsumerKey",
+				"hidden": false,
+				"provider_icon": "chrome://global/skin/icons/pocket.svg",
+				"provider_name": "Pocket",
+				"read_more_endpoint": "https://getpocket.com/explore/trending?src=fx_new_tab",
+				"stories_endpoint": "https://getpocket.cdn.mozilla.net/v3/firefox/global-recs?version=3&consumer_key=$apiKey&locale_lang=en-US&feed_variant=default_spocs_on",
+				"stories_referrer": "https://getpocket.com/recommendations",
+				"topics_endpoint": "https://getpocket.cdn.mozilla.net/v3/firefox/trending-topics?version=2&consumer_key=$apiKey&locale_lang=en-US",
+				"show_spocs": true
+			},
+			"contextMenuOptions": [
+				"CheckBookmarkOrArchive",
+				"CheckSavedToPocket",
+				"Separator",
+				"OpenInNewWindow",
+				"OpenInPrivateWindow",
+				"Separator",
+				"BlockUrl"
+			],
+			"initialized": false,
+			"dedupeConfigurations": [
+				{
+					"id": "topstories",
+					"dedupeFrom": [
+						"highlights"
+					]
+				}
+			]
+		},
+		{
+			"title": {
+				"id": "newtab-section-header-recent-activity"
+			},
+			"rows": [],
+			"enabled": false,
+			"id": "highlights",
+			"pref": {
+				"titleString": {
+					"id": "home-prefs-recent-activity-header"
+				},
+				"descString": {
+					"id": "home-prefs-recent-activity-description"
+				},
+				"nestedPrefs": [
+					{
+						"name": "section.highlights.includeVisited",
+						"titleString": "home-prefs-highlights-option-visited-pages"
+					},
+					{
+						"name": "section.highlights.includeBookmarks",
+						"titleString": "home-prefs-highlights-options-bookmarks"
+					},
+					{
+						"name": "section.highlights.includeDownloads",
+						"titleString": "home-prefs-highlights-option-most-recent-download"
+					},
+					{
+						"name": "section.highlights.includePocket",
+						"titleString": "home-prefs-highlights-option-saved-to-pocket",
+						"hidden": false
+					}
+				],
+				"collapsed": false,
+				"feed": "feeds.section.highlights"
+			},
+			"shouldHidePref": false,
+			"eventSource": "HIGHLIGHTS",
+			"icon": "chrome://global/skin/icons/highlights.svg",
+			"compactCards": true,
+			"rowsPref": "section.highlights.rows",
+			"maxRows": 4,
+			"emptyState": {
+				"message": {
+					"id": "newtab-empty-section-highlights"
+				},
+				"icon": "chrome://global/skin/icons/highlights.svg"
+			},
+			"shouldSendImpressionStats": false,
+			"options": {},
+			"initialized": false
+		}
+	],
+	"Notifications": {
+		"showNotifications": false,
+		"toastCounter": 0,
+		"toastId": "",
+		"toastQueue": []
+	},
+	"Pocket": {
+		"isUserLoggedIn": null,
+		"pocketCta": {},
+		"waitingForSpoc": true
+	},
+	"Personalization": {
+		"lastUpdated": null,
+		"initialized": false
+	},
+	"DiscoveryStream": {
+		"config": {
+			"api_key_pref": "extensions.pocket.oAuthConsumerKey",
+			"collapsible": true,
+			"enabled": true
+		},
+		"layout": [
+			{
+				"width": 12,
+				"components": [
+					{
+						"type": "TopSites",
+						"header": {
+							"title": {
+								"id": "newtab-section-header-topsites"
+							}
+						},
+						"placement": {
+							"name": "sponsored-topsites",
+							"ad_types": [
+								3120
+							],
+							"zone_ids": [
+								280143
+							]
+						},
+						"spocs": {
+							"probability": 1,
+							"prefs": [
+								"showSponsoredTopSites"
+							],
+							"positions": [
+								{
+									"index": 2
+								}
+							]
+						},
+						"properties": {}
+					},
+					{
+						"type": "Message",
+						"essentialReadsHeader": false,
+						"editorsPicksHeader": false,
+						"header": {
+							"title": {
+								"id": "newtab-section-header-stories"
+							},
+							"subtitle": "",
+							"link_text": {
+								"id": "newtab-pocket-learn-more"
+							},
+							"link_url": "https://getpocket.com/firefox/new_tab_learn_more",
+							"icon": "chrome://global/skin/icons/pocket.svg"
+						},
+						"properties": {
+							"spocMessageVariant": ""
+						},
+						"styles": {
+							".ds-message": "margin-bottom: -20px"
+						}
+					},
+					{
+						"type": "CardGrid",
+						"properties": {
+							"items": 21,
+							"hybridLayout": false,
+							"hideCardBackground": false,
+							"fourCardLayout": false,
+							"compactGrid": false,
+							"essentialReadsHeader": false,
+							"editorsPicksHeader": false,
+							"onboardingExperience": false,
+							"ctaButtonSponsors": [
+								""
+							],
+							"ctaButtonVariant": "",
+							"spocMessageVariant": ""
+						},
+						"widgets": {
+							"positions": [],
+							"data": [
+								{
+									"type": "TopicsWidget"
+								}
+							]
+						},
+						"cta_variant": "link",
+						"header": {
+							"title": ""
+						},
+						"placement": {
+							"name": "spocs",
+							"ad_types": [
+								3617
+							],
+							"zone_ids": [
+								217758,
+								217995
+							]
+						},
+						"feed": {
+							"embed_reference": null,
+							"url": "https://firefox-api-proxy.cdn.mozilla.net/desktop/v1/recommendations?locale=$locale&region=$region&count=30"
+						},
+						"spocs": {
+							"probability": 1,
+							"positions": [
+								{
+									"index": 1
+								},
+								{
+									"index": 5
+								},
+								{
+									"index": 7
+								},
+								{
+									"index": 11
+								},
+								{
+									"index": 18
+								},
+								{
+									"index": 20
+								}
+							]
+						}
+					},
+					{
+						"type": "Navigation",
+						"newFooterSection": false,
+						"properties": {
+							"alignment": "left-align",
+							"links": [
+								{
+									"name": "Self improvement",
+									"url": "https://getpocket.com/explore/self-improvement?utm_source=pocket-newtab"
+								},
+								{
+									"name": "Food",
+									"url": "https://getpocket.com/explore/food?utm_source=pocket-newtab"
+								},
+								{
+									"name": "Entertainment",
+									"url": "https://getpocket.com/explore/entertainment?utm_source=pocket-newtab"
+								},
+								{
+									"name": "Health & fitness",
+									"url": "https://getpocket.com/explore/health?utm_source=pocket-newtab"
+								},
+								{
+									"name": "Science",
+									"url": "https://getpocket.com/explore/science?utm_source=pocket-newtab"
+								},
+								{
+									"name": "More recommendations ›",
+									"url": "https://getpocket.com/explore?utm_source=pocket-newtab"
+								}
+							],
+							"extraLinks": [
+								{
+									"name": "Career",
+									"url": "https://getpocket.com/explore/career?utm_source=pocket-newtab"
+								},
+								{
+									"name": "Technology",
+									"url": "https://getpocket.com/explore/technology?utm_source=pocket-newtab"
+								}
+							],
+							"privacyNoticeURL": {
+								"url": "https://www.mozilla.org/privacy/firefox/#recommend-relevant-content",
+								"title": {
+									"id": "newtab-section-menu-privacy-notice"
+								}
+							}
+						},
+						"header": {
+							"title": {
+								"id": "newtab-pocket-read-more"
+							}
+						},
+						"styles": {
+							".ds-navigation": "margin-top: -10px;"
+						}
+					}
+				]
+			}
+		],
+		"isPrivacyInfoModalVisible": false,
+		"isCollectionDismissible": true,
+		"feeds": {
+			"data": {
+				"https://firefox-api-proxy.cdn.mozilla.net/desktop/v1/recommendations?locale=$locale&region=$region&count=30": {
+					"lastUpdated": 1739305885205,
+					"personalized": false,
+					"data": {
+						"settings": {},
+						"recommendations": [
+							{
+								"id": 8777055997556041,
+								"url": "https://www.si.com/nfl/eagles-super-bowl-champions-21-moments-digital-cover?utm_source=firefox-newtab-en-us",
+								"title": "The 21 Moments That Helped the Eagles Win Their Second Super Bowl",
+								"excerpt": "A championship lost and a year-after collapse. A bye week declaration. A torn knee and a Black Panther. A book, an OC and so much more. Inside a two-year journey of healing before Philadelphia could win it all.",
+								"publisher": "Sports Illustrated",
+								"raw_image_src": "https://s3.us-east-1.amazonaws.com/pocket-curatedcorpusapi-prod-images/c3902a6a-8a14-4c7f-8de0-72506ae9365e.jpeg",
+								"recommendation_id": "d643b83a-2bf8-488f-83d7-e3bab5762f21",
+								"score": 1
+							},
+							{
+								"id": 97004341561903,
+								"url": "https://getpocket.com/explore/item/the-20-5-3-rule-prescribes-how-much-time-you-should-spend-outside?utm_source=firefox-newtab-en-us",
+								"title": "The ‘20-5-3’ Rule Prescribes How Much Time You Should Spend Outside",
+								"excerpt": "Use this three-number formula to make yourself healthier and happier.",
+								"publisher": "Prevention",
+								"raw_image_src": "https://s3.us-east-1.amazonaws.com/pocket-curatedcorpusapi-prod-images/eed683f5-f223-487d-8125-6f91952303fe.jpeg",
+								"recommendation_id": "7483869a-05de-4a52-8ecd-e09b8f418e35",
+								"score": 1
+							},
+							{
+								"id": 4830676852869969,
+								"url": "https://www.context.news/climate-justice/does-climate-change-increase-violence-towards-women?utm_source=firefox-newtab-en-us",
+								"title": "Does Climate Change Increase Violence Towards Women?",
+								"excerpt": "Extreme heat, storms and food insecurity fuel violence against women as climate change ramps up risk factors",
+								"publisher": "Context",
+								"raw_image_src": "https://ddc514qh7t05d.cloudfront.net/dA/c145133aa0bd09a4a726eb8de2db3052/1200w/Jpeg",
+								"recommendation_id": "0d84792e-593d-494e-95bc-491081168cb8",
+								"score": 1
+							},
+							{
+								"id": 702824202273761,
+								"url": "https://www.npr.org/2025/02/09/nx-s1-5279568/searching-the-entire-sky-for-the-secrets-to-our-universe?utm_source=firefox-newtab-en-us",
+								"title": "Searching the Entire Sky for the Secrets to Our Universe",
+								"excerpt": "A new telescope could launch as early as late February. SPHEREx will look into deep space and also search for organic molecules.",
+								"publisher": "NPR",
+								"raw_image_src": "https://npr.brightspotcdn.com/dims3/default/strip/false/crop/8188x4606+0+0/resize/1400/quality/100/format/jpeg/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2F4a%2F7b%2F050d2f1d4402b5fcc5fcdce3a337%2Fpia26539-spherex-spacecraft.jpg",
+								"recommendation_id": "ccc2c47e-24ba-459e-a324-5fa88db414d2",
+								"score": 1
+							},
+							{
+								"id": 2169157736894891,
+								"url": "https://apnews.com/article/israel-hamas-war-gaza-ceasefire-news-02-11-2025-f9dfb57e3c43001d3cc9e2ee618e8272?utm_source=firefox-newtab-en-us",
+								"title": "Hamas Brushes Off Trump and Insists All Parties Must Be Committed to Ceasefire",
+								"excerpt": "Hamas has brushed off President Donald Trump’s threat that “all hell” will break out if it does not release the remaining Israeli hostages held in the Gaza Strip by Saturday.",
+								"publisher": "The Associated Press",
+								"raw_image_src": "https://s3.us-east-1.amazonaws.com/pocket-curatedcorpusapi-prod-images/35dfeda9-7ded-4250-8145-3894bd71bf34.jpeg",
+								"recommendation_id": "f6486d05-5222-42c5-8698-47592d8c01d5",
+								"score": 1
+							},
+							{
+								"id": 4535023863268910,
+								"url": "https://www.newyorker.com/magazine/2025/02/17/gary-indiana-and-the-long-shadow-of-us-steel?utm_source=firefox-newtab-en-us",
+								"title": "Gary, Indiana, and the Long Shadow of U.S. Steel",
+								"excerpt": "Can a company town that’s been called “the most miserable city in America” remake itself?",
+								"publisher": "The New Yorker",
+								"raw_image_src": "https://media.newyorker.com/photos/67a68bb008dd6f92144287a1/16:9/w_1280,c_limit/williams-gary-indiana-ruddy-roye-1.jpg",
+								"recommendation_id": "e42e4cbd-907b-4ac8-a40c-5f619fe64b92",
+								"score": 1
+							},
+							{
+								"id": 5649733123975328,
+								"url": "https://www.businessinsider.com/doctors-chief-medical-officers-healthcare-google-uber-salesforce-executives-2025-2?utm_source=firefox-newtab-en-us",
+								"title": "Doctors in the C-Suite",
+								"excerpt": "Burned-out doctors are ditching the operating room for the board room.",
+								"publisher": "Business Insider",
+								"raw_image_src": "https://i.insider.com/67a3b8f37bb3f854015bde3d?width=1200&format=jpeg",
+								"recommendation_id": "922c062c-6b2c-4bd4-bf4f-698c513d7df5",
+								"score": 1
+							},
+							{
+								"id": 7307333964338311,
+								"url": "https://bigthink.com/business/the-psychology-of-ultra-confidence/?utm_source=firefox-newtab-en-us",
+								"title": "The Psychology of “Ultra-Confidence” in Business and Sports",
+								"excerpt": "Performance psychology reveals the mental techniques elite athletes use to build and maintain their ultra-confidence.",
+								"publisher": "Big Think",
+								"raw_image_src": "https://bigthink.com/wp-content/themes/bigthink/build/assets/img/CTA-website-mosaic.jpg",
+								"recommendation_id": "9c825496-f1b7-4539-b34c-7a986945c6ac",
+								"score": 1
+							},
+							{
+								"id": 1167250281397586,
+								"url": "https://www.cbsnews.com/news/the-friendship-bench-bringing-talk-therapy-into-underserved-communities/?utm_source=firefox-newtab-en-us",
+								"title": "The Friendship Bench: Bringing Talk Therapy Into Underserved Communities",
+								"excerpt": "A program begun in Zimbabwe in which grandmothers and older listeners serve as “first responders” for those seeking mental health assistance in underserved communities has now expanded to nine countries, including the U.S.",
+								"publisher": "CBS News",
+								"raw_image_src": "https://assets1.cbsnewsstatic.com/hub/i/r/2025/02/08/cc817012-61ef-4051-a001-35c9bb10a714/thumbnail/1200x630g2/28a22a4af372f2c0cb95b9b31c1ed4a9/friendship-bench-1280.jpg?v=c6b5070a57014f3b00753bf0e763f9c3",
+								"recommendation_id": "fd03ee1d-2c1b-4dad-81b5-c6ffa62e0cd3",
+								"score": 1
+							},
+							{
+								"id": 5422608153457473,
+								"url": "https://www.npr.org/2025/02/08/g-s1-47257/the-american-tailgate-why-strangers-recreate-their-living-rooms-in-a-parking-lot?utm_source=firefox-newtab-en-us",
+								"title": "The American Tailgate: Why Strangers Recreate Their Living Rooms in a Parking Lot",
+								"excerpt": "There’s nothing quite like a tailgate, where fans serve food to strangers who share the same passion. We went to a Philadelphia Eagles tailgate to learn what drives this uniquely American tradition.",
+								"publisher": "NPR",
+								"raw_image_src": "https://npr.brightspotcdn.com/dims3/default/strip/false/crop/4000x2250+0+208/resize/1400/quality/100/format/jpeg/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2Ffc%2F87%2F652a533f44139a75e877eacd6e25%2Feagles-commanders-42.JPG",
+								"recommendation_id": "e368d6a9-c3be-4cc5-9317-581151e7158b",
+								"score": 1
+							},
+							{
+								"id": 4984737373581782,
+								"url": "https://www.vox.com/future-perfect/398131/factory-farm-air-pollution-space-north-carolina?utm_source=firefox-newtab-en-us",
+								"title": "We Can See Factory Farm Pollution All the Way From Space",
+								"excerpt": "But communities of color face the worst ammonia pollution on the ground, a new study reveals.",
+								"publisher": "Vox",
+								"raw_image_src": "https://platform.vox.com/wp-content/uploads/sites/2/2025/02/WAM7290-2.jpg?quality=90&strip=all&crop=0,10.732984293194,100,78.534031413613",
+								"recommendation_id": "3c808ace-9970-4957-9c7e-e07ace24cd6f",
+								"score": 1
+							},
+							{
+								"id": 7620244381110481,
+								"url": "https://www.theatlantic.com/newsletters/archive/2025/02/what-is-ai-distillation/681616/?utm_source=firefox-newtab-en-us",
+								"title": "What Is AI Distillation?",
+								"excerpt": "And what does it mean if DeepSeek did it?",
+								"publisher": "The Atlantic",
+								"raw_image_src": "https://cdn.theatlantic.com/thumbor/TozRh-w07i3PmrEJxmH-JvUhGtg=/0x43:2000x1085/1200x625/media/img/mt/2025/02/AI_frame_deepseek/original.jpg",
+								"recommendation_id": "a8ff574e-225a-4493-aa34-a54e122edbe1",
+								"score": 1
+							},
+							{
+								"id": 7713543374250821,
+								"url": "https://www.cnbc.com/2025/02/10/chinese-evs-compete-with-no-down-payment-5-year-interest-free-loans.html?utm_source=firefox-newtab-en-us",
+								"title": "How EV Makers in China Are Ramping up Competition: No Down Payment and 5-Year Interest-Free Loans",
+								"excerpt": "Electric car companies in China welcomed the Year of the Snake with several incentives, after major automakers reported a drop in deliveries at the start of the year.",
+								"publisher": "CNBC",
+								"raw_image_src": "https://image.cnbcfm.com/api/v1/image/108086863-1736949125630-gettyimages-2193614057-img_5391_mag8oxy9.jpeg?v=1738834860&w=1920&h=1080",
+								"recommendation_id": "ff417b78-03ce-428e-9170-caf7cc927d50",
+								"score": 1
+							},
+							{
+								"id": 970780720971178,
+								"url": "https://www.marthastewart.com/best-terrarium-plants-8786184?utm_source=firefox-newtab-en-us",
+								"title": "The 10 Best Terrarium Plants for Your Mini Ecosystem",
+								"excerpt": "Everything you need to know about choosing plants and cultivating your own modern terrarium.",
+								"publisher": "Martha Stewart",
+								"raw_image_src": "https://www.marthastewart.com/thmb/3NH7m8Vfs5JOiWHKIAmqJj5kPcg=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/best-terrarium-plants-lead-getty-0723-1201ee5b72384359ae13782f88d48124.jpg",
+								"recommendation_id": "490219b4-713f-4087-8988-d6ca31e182ae",
+								"score": 1
+							},
+							{
+								"id": 3185325107794960,
+								"url": "https://www.espn.com/nfl/story/_/id/43738806/rooney-rule-founders-agree-goodell-point-shortage-offensive-coaches?utm_source=firefox-newtab-en-us",
+								"title": "The Rooney Rule Works, but Pipeline Adjustments Are Needed, Founders Say",
+								"excerpt": "They point to a paucity of black offensive coordinators, the pool often tapped for new head coaches.",
+								"publisher": "ESPN",
+								"raw_image_src": "https://a2.espncdn.com/combiner/i?img=%2Fphoto%2F2025%2F0204%2Fr1447281_1296x729_16%2D9.jpg",
+								"recommendation_id": "46dcb679-c0b1-4aea-84c0-c3cc62d27702",
+								"score": 1
+							},
+							{
+								"id": 5445234455178464,
+								"url": "https://www.wired.com/story/ai-save-kill-dating-apps/?utm_source=firefox-newtab-en-us",
+								"title": "AI Will Save Dating Apps. or Maybe Finally Kill Them",
+								"excerpt": "A slew of tools—from Iris Dating to Grindr’s forthcoming “wingman”—promise that they can increase your odds of finding someone with AI. So far, the results are mixed.",
+								"publisher": "WIRED",
+								"raw_image_src": "https://media.wired.com/photos/67a63fd656bbd7da99457dd4/191:100/w_1280,c_limit/Final_V1_2400x1350.jpg",
+								"recommendation_id": "56fe618a-f68c-411f-b459-151096a0d00b",
+								"score": 1
+							},
+							{
+								"id": 737282151991142,
+								"url": "https://www.axios.com/2025/02/09/ice-students-carrying-visas-passports?utm_source=firefox-newtab-en-us",
+								"title": "ICE Fears Prompt Foreign Workers and Students to Keep Visas Close",
+								"excerpt": "It’s a snapshot of America in 2025.",
+								"publisher": "Axios",
+								"raw_image_src": "https://images.axios.com/E6NoQhoZLLaa8DPvcUD8MKIMg_k=/0x0:1920x1080/1366x768/2025/02/07/1738957238532.jpg",
+								"recommendation_id": "cd2c3e58-29e3-42e8-9460-94d486572861",
+								"score": 1
+							},
+							{
+								"id": 603732004659071,
+								"url": "https://www.forbes.com/sites/andrewrosen/2025/02/06/how-to-plan-your-retirement-for-a-life-of-travel/?utm_source=firefox-newtab-en-us",
+								"title": "How to Plan Your Retirement for a Life of Travel",
+								"excerpt": "A retirement full of travel requires thoughtful planning, financial discipline, and a clear roadmap.",
+								"publisher": "Forbes",
+								"raw_image_src": "https://imageio.forbes.com/specials-images/imageserve/67769679c210a13d1dd23012/0x0.jpg?format=jpg&height=900&width=1600&fit=bounds",
+								"recommendation_id": "4b585912-12c9-4730-81fa-7751382823a2",
+								"score": 1
+							},
+							{
+								"id": 8248888806080854,
+								"url": "https://lifehacker.com/tech/apple-needs-to-launch-more-apps-on-android?utm_source=firefox-newtab-en-us",
+								"title": "Apple ‘Invites’ Proves Why the Company Needs to Launch More Apps on Android",
+								"excerpt": "Should Apple be more like Google with its app strategy?",
+								"publisher": "Lifehacker",
+								"raw_image_src": "https://lifehacker.com/imagery/articles/01JKG42RGBGN5C6Z42XA2JV25H/hero-image.fill.size_1200x675.jpg",
+								"recommendation_id": "931cd903-12b9-482d-a805-c76a46e12215",
+								"score": 1
+							},
+							{
+								"id": 6464283413219570,
+								"url": "https://www.self.com/story/breaking-up-over-text?utm_source=firefox-newtab-en-us",
+								"title": "Is Breaking Up Over Text Ever Okay?",
+								"excerpt": "Plus, what to keep in mind before you hit send.",
+								"publisher": "SELF",
+								"raw_image_src": "https://s3.us-east-1.amazonaws.com/pocket-curatedcorpusapi-prod-images/225cd4b3-4fed-4045-8eaf-709012577265.jpeg",
+								"recommendation_id": "ded511a8-ff70-497c-99b2-709820b0b059",
+								"score": 1
+							},
+							{
+								"id": 7955066792613271,
+								"url": "https://www.elledecor.com/design-decorate/trends/a63689790/tiktok-interior-design-trends-2025/?utm_source=firefox-newtab-en-us",
+								"title": "5 TikTok Interior Design Trends That Are Here to Stay",
+								"excerpt": "Not every TikTok trend deserves a spot in your home—here are the ones experts say will last.",
+								"publisher": "ELLE Decor",
+								"raw_image_src": "https://s3.us-east-1.amazonaws.com/pocket-curatedcorpusapi-prod-images/a7190dae-6c54-4a03-98e4-17e12e04a570.jpeg",
+								"recommendation_id": "889335ee-8d80-4ac0-b426-09465e0bb6a3",
+								"score": 1
+							},
+							{
+								"id": 3016090259677922,
+								"url": "https://theconversation.com/different-songs-for-different-days-why-its-important-to-actively-choose-the-music-for-your-mood-246233?utm_source=firefox-newtab-en-us",
+								"title": "Why It’s Important to Actively Choose the Music for Your Mood",
+								"excerpt": "The songs we love are very personal, whether they’re meaningful, pleasure-inducing or bangers. How do you choose what you should listen to?",
+								"publisher": "The Conversation",
+								"raw_image_src": "https://s3.us-east-1.amazonaws.com/pocket-curatedcorpusapi-prod-images/8574c775-71bf-4959-88aa-c91e3931428e.jpeg",
+								"recommendation_id": "7bebf05d-c284-411f-97ed-c6a608380b35",
+								"score": 1
+							},
+							{
+								"id": 7048805567314057,
+								"url": "https://www.aljazeera.com/news/2025/2/10/i-was-running-out-of-money-after-quitting-wartime-russia-some-return?utm_source=firefox-newtab-en-us",
+								"title": "‘I Was Running Out of Money’: After Quitting Wartime Russia, Some Return",
+								"excerpt": "Russia’s war saw many flee due to fears of persecution or being drafted, but find some life abroad too challenging.",
+								"publisher": "Al Jazeera English",
+								"raw_image_src": "https://www.aljazeera.com/wp-content/uploads/2025/02/2025-02-07T060209Z_8184585_RC2BS2AFG59E_RTRMADP_3_RUSSIA-COMPANIES-SEIZURES-1738935004.jpg?resize=1920%2C1440",
+								"recommendation_id": "9125e3dd-19db-43b2-8241-c6ed605e580c",
+								"score": 1
+							},
+							{
+								"id": 5987868894445006,
+								"url": "https://www.nytimes.com/interactive/2025/02/05/us/dc-crash-helicopter-black-hawk-pilots.html?utm_source=firefox-newtab-en-us",
+								"title": "What the Black Hawk Pilots Could See, Just Before the Crash",
+								"excerpt": "A 3-D model created by The Times visualizes the helicopter pilots’ field of view minutes before a fatal crash with a jet in Washington.",
+								"publisher": "The New York Times",
+								"raw_image_src": "https://static01.nyt.com/images/2025/02/04/multimedia/2025-02-02-reagan-crash-3d-analysis-index/2025-02-02-reagan-crash-3d-analysis-index-facebookJumbo-v3.jpg",
+								"recommendation_id": "0da9c9fb-6bc0-41da-98e4-5c0676d9b121",
+								"score": 1
+							},
+							{
+								"id": 5011371253524568,
+								"url": "https://getpocket.com/explore/item/looking-to-ditch-twitter-morse-code-is-back?utm_source=firefox-newtab-en-us",
+								"title": "Looking to Ditch Twitter? Morse Code Is Back",
+								"excerpt": "Reviving a 200-year-old system, enthusiasts are putting the digit back in digital communication.",
+								"publisher": "Smithsonian Magazine",
+								"raw_image_src": "https://s3.us-east-1.amazonaws.com/pocket-curatedcorpusapi-prod-images/d28135e7-145f-4731-9d2e-bed02a49d68a.jpeg",
+								"recommendation_id": "2997eb3e-7921-42eb-820a-5e67fe41f651",
+								"score": 1
+							},
+							{
+								"id": 271002717541278,
+								"url": "https://getpocket.com/explore/item/living-in-an-imaginary-world?utm_source=firefox-newtab-en-us",
+								"title": "Living in an Imaginary World",
+								"excerpt": "Daydreaming can help solve problems and trigger creativity. But when it becomes compulsive, the consequences can be dire.",
+								"publisher": "Scientific American",
+								"raw_image_src": "https://s3.us-east-1.amazonaws.com/pocket-curatedcorpusapi-prod-images/3c37b85d-518d-4d21-87ef-e1f5b805d939.jpeg",
+								"recommendation_id": "084d8fc3-66fc-4d3f-9911-a64093385123",
+								"score": 1
+							},
+							{
+								"id": 537908725627333,
+								"url": "https://getpocket.com/explore/item/walking-for-fitness-what-muscles-does-walking-work?utm_source=firefox-newtab-en-us",
+								"title": "Walking for Fitness: What Muscles Does Walking Work?",
+								"excerpt": "Walking does great things for your mental health and cardiovascular fitness, but did you know that a good walk can also help you build the muscles in your legs and abs?",
+								"publisher": "Stylist",
+								"raw_image_src": "https://s3.amazonaws.com/pocket-curatedcorpusapi-prod-images/104e6290-6206-4351-80bb-eabdffc4b6eb.jpeg",
+								"recommendation_id": "b61cba08-d22a-4d3d-9a66-93e6c2470f8a",
+								"score": 1
+							},
+							{
+								"id": 1653180324966755,
+								"url": "https://getpocket.com/explore/item/the-incredibly-true-story-of-renting-a-friend-in-tokyo?utm_source=firefox-newtab-en-us",
+								"title": "The Incredibly True Story of Renting a Friend in Tokyo",
+								"excerpt": "When you’re alone in Tokyo and you need someone to talk to, do as the locals do: Rent a friend.",
+								"publisher": "Afar",
+								"raw_image_src": "https://s3.amazonaws.com/pocket-curatedcorpusapi-prod-images/14061d7f-2370-4760-88e9-84eb9310804e.jpeg",
+								"recommendation_id": "f4f1ed67-d501-433f-9ae7-73aea15ede54",
+								"score": 1
+							},
+							{
+								"id": 2297733676422110,
+								"url": "https://www.npr.org/2025/02/11/nx-s1-5291451/us-reading-math-scores-solutions?utm_source=firefox-newtab-en-us",
+								"title": "A Deep Dive on U.S. Reading and Math Scores, and What to Do About Them",
+								"excerpt": "New research drills down on poor student achievement, and notes some school districts that are beating the odds.",
+								"publisher": "NPR",
+								"raw_image_src": "https://s3.us-east-1.amazonaws.com/pocket-curatedcorpusapi-prod-images/fd4f52c3-f0b2-4622-af2d-54634133d720.jpeg",
+								"recommendation_id": "54d58332-07c6-4d94-b53e-a09ed0aaa25a",
+								"score": 1
+							},
+							{
+								"id": 726605038310031,
+								"url": "https://getpocket.com/explore/item/the-18th-century-quaker-dwarf-who-challenged-slavery-meat-eating-and-racism?utm_source=firefox-newtab-en-us",
+								"title": "The 18th-Century Quaker Dwarf Who Challenged Slavery, Meat-Eating, and Racism",
+								"excerpt": "Despite his ultra-radical leanings, Benjamin Lay has been almost entirely excised from modern history books.",
+								"publisher": "Atlas Obscura",
+								"raw_image_src": "https://s3.amazonaws.com/pocket-curatedcorpusapi-prod-images/a16316fd-e357-4aea-a323-0dd168d969b3.jpeg",
+								"recommendation_id": "d32e65d0-4c01-426c-9a44-3f34c74e2450",
+								"score": 1
+							}
+						],
+						"status": "success"
+					}
+				}
+			},
+			"loaded": true
+		},
+		"spocs": {
+			"spocs_endpoint": "https://spocs.getpocket.com/spocs",
+			"lastUpdated": 1739305884555,
+			"data": {
+				"settings": {
+					"feature_flags": {
+						"collections": false,
+						"spoc_v2": true
+					},
+					"spocsPerNewTabs": 1,
+					"domainAffinityParameterSets": {
+						"default": {
+							"combinedDomainFactor": 0.5,
+							"frequencyFactor": 0.5,
+							"itemScoreFactor": 1,
+							"multiDomainBoost": 0,
+							"perfectCombinedDomainScore": 2,
+							"perfectFrequencyVisits": 10,
+							"recencyFactor": 0.5
+						},
+						"fully-personalized": {
+							"combinedDomainFactor": 0.5,
+							"frequencyFactor": 0.5,
+							"itemScoreFactor": 0.01,
+							"multiDomainBoost": 0,
+							"perfectCombinedDomainScore": 2,
+							"perfectFrequencyVisits": 10,
+							"recencyFactor": 0.5
+						},
+						"fully-personalized-domains": {
+							"combinedDomainFactor": 0.5,
+							"frequencyFactor": 0.5,
+							"itemScoreFactor": 0.01,
+							"multiDomainBoost": 0,
+							"perfectCombinedDomainScore": 10,
+							"perfectFrequencyVisits": 1,
+							"recencyFactor": 0.5
+						}
+					},
+					"timeSegments": [
+						{
+							"id": "week-1",
+							"startTime": 432000,
+							"endTime": 0,
+							"weightPosition": 1
+						},
+						{
+							"id": "week-2",
+							"startTime": 864000,
+							"endTime": 432000,
+							"weightPosition": 1
+						},
+						{
+							"id": "week-3",
+							"startTime": 1296000,
+							"endTime": 864000,
+							"weightPosition": 1
+						},
+						{
+							"id": "week-4",
+							"startTime": 1728000,
+							"endTime": 1296000,
+							"weightPosition": 1
+						},
+						{
+							"id": "week-5",
+							"startTime": 2160000,
+							"endTime": 1728000,
+							"weightPosition": 1
+						},
+						{
+							"id": "week-6",
+							"startTime": 2592000,
+							"endTime": 2160000,
+							"weightPosition": 1
+						}
+					]
+				},
+				"spocs": {
+					"title": "",
+					"context": "",
+					"sponsor": "",
+					"personalized": false,
+					"items": [
+						{
+							"id": 782265144,
+							"flight_id": 752027357,
+							"campaign_id": 58445949,
+							"title": "The 6 Dumbest Things We Keep Spending Too Much Money On",
+							"url": "https://partners.thepennyhoarder.com/spending-too-much-ca-ff-prt/?aff_id=390&utm_source=firefox&utm_medium=paidnative&aff_sub3=spending-too-much-ca-painting",
+							"domain": "thepennyhoarder.com",
+							"excerpt": "This only takes 90 seconds, but it could save you thousands.",
+							"priority": 3,
+							"context": "Sponsored by The Penny Hoarder",
+							"raw_image_src": "https://s.zkcdn.net/Advertisers/9c6420657e254f8a81915086520c2b7f.jpg",
+							"image_src": "https://img-getpocket.cdn.mozilla.net/direct?url=https%3A%2F%2Fs.zkcdn.net%2FAdvertisers%2F9c6420657e254f8a81915086520c2b7f.jpg&resize=w618-h310",
+							"shim": {
+								"impression": "1,eyJ2IjoiMS4xMiIsImF2IjoxOTcyNTA1LCJhdCI6MzYxNywiYnQiOjAsImNtIjo1ODQ0NTk0OSwiY2giOjM2ODQ4LCJjayI6e30sImNyIjo1MDg3MTg4NDIsImRpIjoiYjE3MTAzYmY2YmVkNDE5NzhkMTU2OWNlMDFmMjM2NjIiLCJkaiI6MCwiaWkiOiI4YTlmMjUwYWEyNmI0ODFlOWEyYmEwOTIyM2IzMWU1OCIsImRtIjozLCJmYyI6NzgyMjY1MTQ0LCJmbCI6NzUyMDI3MzU3LCJpcCI6IjEwNC4xOTguNy4yMTMiLCJrdyI6ImNhLGNhLW9uIiwibWsiOiJjYSIsIm53IjoxMDI1MCwicGMiOjAuMywib3AiOjAuMywibXAiOjAuMywiZWMiOjAsImdtIjowLCJlcCI6bnVsbCwicHIiOjE0NzUxOCwicnQiOjIsInJzIjo1MDAsInNhIjoiNTUiLCJzYiI6ImktMDAyZjU3OWU2ODliZDU3OTQiLCJzcCI6ODA1MjE4LCJzdCI6MTA3MDA5OCwidWsiOiJ7YmY0NjY0YTgtOGEyNi00NDA2LWI1ZjQtNjNhM2MxOTdmOTM1fSIsInpuIjoyMTc3NTgsInRzIjoxNzM5MzA1ODgzNzI2LCJwbiI6InNwb2NzIiwiZ2MiOnRydWUsImdDIjp0cnVlLCJncyI6Im5vbmUiLCJkYyI6MSwidHoiOiJVVEMiLCJiYSI6MSwiZnEiOjF9,GZoWP9ZxRV27RI9RwjPgidX-vDI",
+								"click": "0,eyJ2IjoiMS4xMiIsImF2IjoxOTcyNTA1LCJhdCI6MzYxNywiYnQiOjAsImNtIjo1ODQ0NTk0OSwiY2giOjM2ODQ4LCJjayI6e30sImNyIjo1MDg3MTg4NDIsImRpIjoiYjE3MTAzYmY2YmVkNDE5NzhkMTU2OWNlMDFmMjM2NjIiLCJkaiI6MCwiaWkiOiI4YTlmMjUwYWEyNmI0ODFlOWEyYmEwOTIyM2IzMWU1OCIsImRtIjozLCJmYyI6NzgyMjY1MTQ0LCJmbCI6NzUyMDI3MzU3LCJpcCI6IjEwNC4xOTguNy4yMTMiLCJrdyI6ImNhLGNhLW9uIiwibWsiOiJjYSIsIm53IjoxMDI1MCwicGMiOjAuMywib3AiOjAuMywibXAiOjAuMywiZWMiOjAsImdtIjowLCJlcCI6bnVsbCwicHIiOjE0NzUxOCwicnQiOjIsInJzIjo1MDAsInNhIjoiNTUiLCJzYiI6ImktMDAyZjU3OWU2ODliZDU3OTQiLCJzcCI6ODA1MjE4LCJzdCI6MTA3MDA5OCwidWsiOiJ7YmY0NjY0YTgtOGEyNi00NDA2LWI1ZjQtNjNhM2MxOTdmOTM1fSIsInpuIjoyMTc3NTgsInRzIjoxNzM5MzA1ODgzNzI2LCJwbiI6InNwb2NzIiwiZ2MiOnRydWUsImdDIjp0cnVlLCJncyI6Im5vbmUiLCJkYyI6MSwidHoiOiJVVEMiLCJ1ciI6bnVsbH0,x9fXXNYX2zHSXBk96WuQ6pMcysI",
+								"delete": "",
+								"save": ""
+							},
+							"parameter_set": "default",
+							"caps": {
+								"lifetime": 50,
+								"campaign": {
+									"count": 10,
+									"period": 86400
+								},
+								"flight": {
+									"count": 10,
+									"period": 86400
+								}
+							},
+							"domain_affinities": {},
+							"personalization_models": {
+								"arts_and_entertainment": 1,
+								"autos_and_vehicles": 1,
+								"beauty_and_fitness": 1,
+								"blogging_resources_and_services": 1,
+								"books_and_literature": 1,
+								"business_and_industrial": 1,
+								"computers_and_electronics": 1,
+								"finance": 1,
+								"food_and_drink": 1,
+								"games": 1,
+								"health": 1,
+								"hobbies_and_leisure": 1,
+								"home_and_garden": 1,
+								"internet_and_telecom": 1,
+								"jobs_and_education": 1,
+								"law_and_government": 1,
+								"online_communities": 1,
+								"people_and_society": 1,
+								"pets_and_animals": 1,
+								"real_estate": 1,
+								"reference": 1,
+								"science": 1,
+								"shopping": 1,
+								"sports": 1,
+								"travel": 1
+							},
+							"min_score": 0.1,
+							"item_score": 0.2,
+							"sponsor": "The Penny Hoarder",
+							"fetchTimestamp": 1739305884555,
+							"score": 0.2
+						},
+						{
+							"id": 789529166,
+							"flight_id": 749633757,
+							"campaign_id": 547012792,
+							"title": "Get VOD Gift Cards Cheaper on G2A.com",
+							"url": "https://www.g2a.com/best-deals/vod-services?adid=COM_CA_PB_DIGI_GAM_MIX_MOZILLA_VOD_1&id=1611&utm_source=mozilla&utm_medium=price_comparison&utm_campaign=COM_CA_PB_DIGI_GAM_MIX_MOZILLA_VOD_1",
+							"domain": "g2a.com",
+							"excerpt": "It’ll be hard to run out of stuff to watch with these. Head to G2A.com to grab gift cards cheaper.",
+							"priority": 3,
+							"context": "Sponsored by G2A",
+							"raw_image_src": "https://s.zkcdn.net/Advertisers/2e1fac4ffb2d4d6da01cf0d75b46b328.png",
+							"image_src": "https://img-getpocket.cdn.mozilla.net/direct?url=https%3A%2F%2Fs.zkcdn.net%2FAdvertisers%2F2e1fac4ffb2d4d6da01cf0d75b46b328.png&resize=w618-h310",
+							"shim": {
+								"impression": "1,eyJ2IjoiMS4xMiIsImF2Ijo1NTg0NjMwLCJhdCI6MzYxNywiYnQiOjAsImNtIjo1NDcwMTI3OTIsImNoIjozNjg0OCwiY2siOnt9LCJjciI6NjE0NDAxNzI4LCJkaSI6ImIxNzEwM2JmNmJlZDQxOTc4ZDE1NjljZTAxZjIzNjYyIiwiZGoiOjEsImlpIjoiNTU5ZmJiOTFkYzg2NDRlMjhkMDA4Mzg0ZGU2NDRiOTYiLCJkbSI6MywiZmMiOjc4OTUyOTE2NiwiZmwiOjc0OTYzMzc1NywiaXAiOiIxMDQuMTk4LjcuMjEzIiwia3ciOiJjYSxjYS1vbiIsIm1rIjoiY2EiLCJudyI6MTAyNTAsInBjIjoxLCJvcCI6MSwibXAiOjEsImVjIjowLCJnbSI6MCwiZXAiOm51bGwsInByIjoxNDc1MTgsInJ0IjoyLCJycyI6NTAwLCJzYSI6IjU1Iiwic2IiOiJpLTAwMmY1NzllNjg5YmQ1Nzk0Iiwic3AiOjgwNTIxOCwic3QiOjEwNzAwOTgsInVrIjoie2JmNDY2NGE4LThhMjYtNDQwNi1iNWY0LTYzYTNjMTk3ZjkzNX0iLCJ6biI6MjE3NzU4LCJ0cyI6MTczOTMwNTg4MzcyNywicG4iOiJzcG9jcyIsImdjIjp0cnVlLCJnQyI6dHJ1ZSwiZ3MiOiJub25lIiwiZGMiOjEsInR6IjoiVVRDIiwiYmEiOjEsImZxIjoxfQ,HqajiIyvmmEAoABNZcIVpzsFwl0",
+								"click": "0,eyJ2IjoiMS4xMiIsImF2Ijo1NTg0NjMwLCJhdCI6MzYxNywiYnQiOjAsImNtIjo1NDcwMTI3OTIsImNoIjozNjg0OCwiY2siOnt9LCJjciI6NjE0NDAxNzI4LCJkaSI6ImIxNzEwM2JmNmJlZDQxOTc4ZDE1NjljZTAxZjIzNjYyIiwiZGoiOjEsImlpIjoiNTU5ZmJiOTFkYzg2NDRlMjhkMDA4Mzg0ZGU2NDRiOTYiLCJkbSI6MywiZmMiOjc4OTUyOTE2NiwiZmwiOjc0OTYzMzc1NywiaXAiOiIxMDQuMTk4LjcuMjEzIiwia3ciOiJjYSxjYS1vbiIsIm1rIjoiY2EiLCJudyI6MTAyNTAsInBjIjoxLCJvcCI6MSwibXAiOjEsImVjIjowLCJnbSI6MCwiZXAiOm51bGwsInByIjoxNDc1MTgsInJ0IjoyLCJycyI6NTAwLCJzYSI6IjU1Iiwic2IiOiJpLTAwMmY1NzllNjg5YmQ1Nzk0Iiwic3AiOjgwNTIxOCwic3QiOjEwNzAwOTgsInVrIjoie2JmNDY2NGE4LThhMjYtNDQwNi1iNWY0LTYzYTNjMTk3ZjkzNX0iLCJ6biI6MjE3NzU4LCJ0cyI6MTczOTMwNTg4MzcyNywicG4iOiJzcG9jcyIsImdjIjp0cnVlLCJnQyI6dHJ1ZSwiZ3MiOiJub25lIiwiZGMiOjEsInR6IjoiVVRDIiwidXIiOm51bGx9,YTdZUBEYYqdI0KcMQzj2UTv4HiA",
+								"delete": "",
+								"save": ""
+							},
+							"parameter_set": "default",
+							"caps": {
+								"lifetime": 50,
+								"campaign": {
+									"count": 10,
+									"period": 86400
+								},
+								"flight": {
+									"count": 10,
+									"period": 86400
+								}
+							},
+							"domain_affinities": {},
+							"personalization_models": {
+								"arts_and_entertainment": 1,
+								"autos_and_vehicles": 1,
+								"beauty_and_fitness": 1,
+								"blogging_resources_and_services": 1,
+								"books_and_literature": 1,
+								"business_and_industrial": 1,
+								"computers_and_electronics": 1,
+								"finance": 1,
+								"food_and_drink": 1,
+								"games": 1,
+								"health": 1,
+								"hobbies_and_leisure": 1,
+								"home_and_garden": 1,
+								"internet_and_telecom": 1,
+								"jobs_and_education": 1,
+								"law_and_government": 1,
+								"online_communities": 1,
+								"people_and_society": 1,
+								"pets_and_animals": 1,
+								"real_estate": 1,
+								"reference": 1,
+								"science": 1,
+								"shopping": 1,
+								"sports": 1,
+								"travel": 1
+							},
+							"min_score": 0.1,
+							"item_score": 0.2,
+							"sponsor": "G2A",
+							"fetchTimestamp": 1739305884555,
+							"score": 0.2
+						}
+					]
+				},
+				"sponsored-topsites": {
+					"title": "",
+					"context": "",
+					"items": []
+				}
+			},
+			"loaded": true,
+			"frequency_caps": [],
+			"blocked": [],
+			"placements": [
+				{
+					"name": "sponsored-topsites",
+					"ad_types": [
+						3120
+					],
+					"zone_ids": [
+						280143
+					]
+				},
+				{
+					"name": "spocs",
+					"ad_types": [
+						3617
+					],
+					"zone_ids": [
+						217758,
+						217995
+					]
+				}
+			]
+		},
+		"experimentData": {
+			"utmSource": "pocket-newtab"
+		},
+		"recentSavesData": [],
+		"isUserLoggedIn": false,
+		"recentSavesEnabled": false,
+		"pocketButtonEnabled": true,
+		"saveToPocketCard": true,
+		"hideDescriptions": false,
+		"compactImages": false,
+		"imageGradient": false,
+		"newSponsoredLabel": false,
+		"titleLines": 3,
+		"descLines": 3,
+		"readTime": true
+	},
+	"Search": {
+		"fakeFocus": false,
+		"hide": false
+	},
+	"Wallpapers": {
+		"wallpaperList": [],
+		"highlightSeenCounter": {
+			"value": 0
+		},
+		"categories": []
+	},
+	"Weather": {
+		"initialized": false,
+		"lastUpdated": null,
+		"query": "",
+		"suggestions": [],
+		"locationData": {
+			"city": "",
+			"adminArea": "",
+			"country": ""
+		},
+		"searchActive": false,
+		"locationSearchString": "",
+		"suggestedLocations": []
+	}
+};
+
+�-B!G           g���G��\����       :about:home alt-data 1;86369,script version 20240819223648  �&

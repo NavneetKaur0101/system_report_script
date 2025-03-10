@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xbel version="1.0"
+      xmlns:bookmark="http://www.freedesktop.org/standards/desktop-bookmarks"
+      xmlns:mime="http://www.freedesktop.org/standards/shared-mime-info"
+>
+  <bookmark href="file:///home/navneetkaur/assignment2.sh" added="2025-03-06T22:26:21.459193Z" modified="2025-03-10T20:04:00.352134Z" visited="2025-03-10T16:03:58.398103-04">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <bookmark:applications>
+          <bookmark:application name="gnome-text-editor" exec="&apos;gnome-text-editor %u&apos;" modified="2025-03-10T20:04:00.352133Z" count="4"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/navneetkaur/system_report_script/makecontainers.sh" added="2025-03-06T22:26:29.457492Z" modified="2025-03-10T20:04:00.352145Z" visited="2025-03-10T16:03:58.628722-04">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <bookmark:applications>
+          <bookmark:application name="gnome-text-editor" exec="&apos;gnome-text-editor %u&apos;" modified="2025-03-10T20:04:00.352144Z" count="3"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/navneetkaur/assignment2-checked.txt" added="2025-03-10T20:01:34.316340Z" modified="2025-03-10T20:04:00.352129Z" visited="2025-03-10T16:03:58.403050-04">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <bookmark:applications>
+          <bookmark:application name="gnome-text-editor" exec="&apos;gnome-text-editor %u&apos;" modified="2025-03-10T20:04:00.352126Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/navneetkaur/check-assign2-script.sh" added="2025-03-10T20:04:00.352138Z" modified="2025-03-10T20:04:00.352140Z" visited="2025-03-10T16:03:58.590278-04">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <bookmark:applications>
+          <bookmark:application name="gnome-text-editor" exec="&apos;gnome-text-editor %u&apos;" modified="2025-03-10T20:04:00.352138Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+</xbel>
