@@ -1,0 +1,42 @@
+==============================
+Starting Assignment 2 Setup
+==============================
+==============================
+Configuring Network
+==============================
+Network is already configured with 192.168.16.21/24
+==============================
+Configuring /etc/hosts
+==============================
+/etc/hosts already contains the correct entry for server1.
+Apache is already installed and running.
+Squid is already installed and running.
+==============================
+Configuring User Accounts
+==============================
+Configuring user: dennis
+User dennis already exists.
+Configuring user: aubrey
+User aubrey already exists.
+Configuring user: captain
+User captain already exists.
+Configuring user: snibbles
+User snibbles already exists.
+Configuring user: brownie
+User brownie already exists.
+Configuring user: scooter
+User scooter already exists.
+Configuring user: sandy
+User sandy already exists.
+Configuring user: perrier
+User perrier already exists.
+Configuring user: cindy
+User cindy already exists.
+Configuring user: tiger
+User tiger already exists.
+Configuring user: yoda
+User yoda already exists.
+==============================
+User Accounts Configured
+==============================
+Assignment 2 Setup Complete!

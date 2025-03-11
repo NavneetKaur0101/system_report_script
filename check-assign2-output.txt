@@ -1,0 +1,14 @@
+---Host/Student info----
+
+Running on Tue Mar 11 08:45:44 PM UTC 2025
+Run by remoteadmin - () on host
+ Static hostname: server1
+      Machine ID: d96864596bf4454d9c15e6804d13d4c5
+Operating System: Ubuntu 22.04.5 LTS
+9ac9629390cbcae160fd061a74ce1178  ./check-assign2-script.sh - d41d8cd98f00b204e9800998ecf8427e  -
+------------------------
+
+---Start of Assignment2.sh Check------
+---Running makecontainers.sh----------
+---Retrieving assignment2.sh script---
+Failed to retrieve assignment2.sh script using URL ''
